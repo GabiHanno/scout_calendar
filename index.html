@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرزنامة السنوية والخطة الاستراتيجية - جمعية الكشاف السرياني السوري</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --scout-maroon: #82151d;
+            --scout-maroon-dark: #580c13;
+            --scout-maroon-deep: #3b070b;
+            --scout-maroon-light: #9e1d27;
+            --scout-maroon-subtle: #fcf1f2;
+
+            --scout-gold: #c69222;
+            --scout-gold-light: #e5b342;
+            --scout-gold-soft: #fcf7e9;
+
+            --scout-cream-bg: #f8f6f2;
+            --scout-card-bg: #ffffff;
+            --scout-border: #e9e2d8;
+            --scout-border-subtle: #f0eae1;
+
+            --scout-text-main: #251616;
+            --scout-text-muted: #6e615e;
+
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-subtle: 0 4px 18px rgba(90, 12, 19, 0.06);
+            --shadow-hover: 0 10px 28px rgba(90, 12, 19, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--scout-cream-bg);
+            color: var(--scout-text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .scout-header {
+            background: linear-gradient(135deg, var(--scout-maroon-deep) 0%, var(--scout-maroon-dark) 45%, var(--scout-maroon) 85%, #6a1017 100%);
+            color: #ffffff;
+            position: relative;
+            padding: 2.8rem 1rem 3.5rem;
+            border-bottom: 4px solid var(--scout-gold);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .scout-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 6px;
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 0 3px var(--scout-gold), 0 0 0 7px rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.04);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45), 0 0 0 4px var(--scout-gold-light), 0 0 0 9px rgba(255, 255, 255, 0.25);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .scout-org-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .scout-subtitle-syriac {
+            font-size: 0.95rem;
+            color: #f7d688;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .scout-page-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            opacity: 0.95;
+            max-width: 750px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .header-stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-pill {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-pill i {
+            color: var(--scout-gold-light);
+        }
+
+        .filter-panel {
+            background: var(--scout-card-bg);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-top: -36px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 12px 32px rgba(90, 12, 19, 0.08);
+            border: 1px solid var(--scout-border);
+        }
+
+        .year-selector-group {
+            display: flex;
+            background: var(--scout-cream-bg);
+            border: 1px solid var(--scout-border);
+            border-radius: 12px;
+            padding: 4px;
+            width: 100%;
+        }
+
+        .year-btn {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: var(--scout-maroon);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 9px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .year-btn.active {
+            background: linear-gradient(135deg, var(--scout-maroon), var(--scout-maroon-dark));
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(130, 21, 29, 0.3);
+        }
+
+        .year-btn:not(.active):hover {
+            background: rgba(130, 21, 29, 0.08);
+        }
+
+        .toolbar-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            margin-bottom: 24px;
+            border: 1px solid var(--scout-border-subtle);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .toolbar-label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--scout-text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .month-btn-pair,
+        .view-btn-pair {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-scout-action {
+            background: #ffffff;
+            border: 1.5px solid var(--scout-maroon);
+            color: var(--scout-maroon);
+            font-weight: 700;
+            font-size: 0.88rem;
+            border-radius: 10px;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-scout-action:hover {
+            background: var(--scout-maroon);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(130, 21, 29, 0.2);
+        }
+
+        .btn-scout-action.active-view {
+            background: var(--scout-maroon-dark);
+            color: #ffffff;
+            border-color: var(--scout-maroon-dark);
+        }
+
+        .months-grid {
+            display: grid;
+            gap: 24px;
+            width: 100%;
+        }
+
+        .months-grid.grid-view {
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            align-items: start;
+        }
+
+        .months-grid.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .month-card {
+            background: var(--scout-card-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--scout-border);
+            box-shadow: var(--shadow-subtle);
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .month-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(198, 146, 34, 0.5);
+        }
+
+        .month-header-btn {
+            width: 100%;
+            background: linear-gradient(to left, #ffffff, #faf6f1);
+            border: none;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: right;
+            border-bottom: 2px solid transparent;
+            transition: background 0.2s ease, border-color 0.2s ease;
+            user-select: none;
+        }
+
+        .month-card.is-expanded .month-header-btn {
+            border-bottom-color: var(--scout-gold);
+            background: linear-gradient(to left, #ffffff, #f7efe6);
+        }
+
+        .month-header-btn:hover {
+            background: #f7eee4;
+        }
+
+        .month-info-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .month-num-badge {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--scout-maroon), var(--scout-maroon-dark));
+            color: #ffffff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 10px rgba(130, 21, 29, 0.25);
+            flex-shrink: 0;
+            border: 1.5px solid var(--scout-gold-light);
+        }
+
+        .month-title-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .month-title-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--scout-maroon-deep);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .month-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .month-count-pill {
+            background: var(--scout-maroon-subtle);
+            color: var(--scout-maroon);
+            border: 1px solid rgba(130, 21, 29, 0.18);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .toggle-arrow-circle {
+            width: 32px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid var(--scout-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--scout-maroon);
+            font-size: 0.85rem;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, color 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+            flex-shrink: 0;
+        }
+
+        .month-card.is-expanded .toggle-arrow-circle {
+            transform: rotate(180deg);
+            background: var(--scout-maroon);
+            color: #ffffff;
+            border-color: var(--scout-maroon);
+        }
+
+        .month-content {
+            display: none;
+            padding: 16px;
+            background: #ffffff;
+        }
+
+        .month-card.is-expanded .month-content {
+            display: block;
+            animation: fadeInMonth 0.25s ease-out forwards;
+        }
+
+        @keyframes fadeInMonth {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scout-event-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--scout-border-subtle);
+            border-right: 4px solid var(--scout-maroon);
+            margin-bottom: 12px;
+            transition: all 0.22s ease;
+            position: relative;
+        }
+
+        .scout-event-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .scout-event-item:hover {
+            transform: translateX(-4px);
+            border-right-color: var(--scout-gold);
+            background: #fdfcf9;
+            box-shadow: 0 4px 14px rgba(90, 12, 19, 0.08);
+        }
+
+        .event-day-box {
+            width: 88px;
+            min-width: 88px;
+            background: var(--scout-cream-bg);
+            border: 1px solid var(--scout-border);
+            border-radius: 10px;
+            padding: 6px 4px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .event-day-badge {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--scout-maroon-dark);
+            line-height: 1.2;
+            direction: ltr;
+        }
+
+        .event-day-sub {
+            font-size: 0.68rem;
+            color: var(--scout-text-muted);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .event-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .event-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--scout-text-main);
+            margin-bottom: 8px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .event-badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .goal-tag {
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            transition: transform 0.15s ease, filter 0.15s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+        }
+
+        .goal-tag:hover {
+            transform: scale(1.04);
+            filter: brightness(0.92);
+        }
+
+        .strategic-guide-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--scout-border);
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            margin-bottom: 24px;
+        }
+
+        .strategic-guide-header {
+            background: linear-gradient(to left, #ffffff, #faf5ef);
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--scout-border-subtle);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .strategic-guide-header:hover {
+            background: #f7efe6;
+        }
+
+        .goal-chip-item {
+            background: #fcfbfa;
+            border: 1px solid var(--scout-border-subtle);
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+
+        .goal-chip-item:hover {
+            background: #ffffff;
+            border-color: var(--scout-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .goal-chip-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .g-color-1 {
+            background-color: #82151d;
+        }
+
+        .g-color-2 {
+            background-color: #1a56db;
+        }
+
+        .g-color-3 {
+            background-color: #047857;
+        }
+
+        .g-color-4 {
+            background-color: #6b21a8;
+        }
+
+        .g-color-5 {
+            background-color: #0d9488;
+        }
+
+        .g-color-6 {
+            background-color: #c2410c;
+        }
+
+        .g-color-7 {
+            background-color: #0284c7;
+        }
+
+        .g-color-8 {
+            background-color: #1e3a8a;
+        }
+
+        .g-color-9 {
+            background-color: #92400e;
+        }
+
+        .g-color-10 {
+            background-color: #b45309;
+        }
+
+
+        .gt-1 {
+            background-color: #fbecee;
+            color: #82151d;
+            border: 1px solid #f2c7cb;
+        }
+
+        .gt-2 {
+            background-color: #ebf5ff;
+            color: #1e429f;
+            border: 1px solid #c3ddfd;
+        }
+
+        .gt-3 {
+            background-color: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+
+        .gt-4 {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+
+        .gt-5 {
+            background-color: #f0fdfa;
+            color: #0f766e;
+            border: 1px solid #99f6e4;
+        }
+
+        .gt-6 {
+            background-color: #fff7ed;
+            color: #c2410c;
+            border: 1px solid #fed7aa;
+        }
+
+        .gt-7 {
+            background-color: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+
+        .gt-8 {
+            background-color: #eff6ff;
+            color: #1e3a8a;
+            border: 1px solid #bfdbfe;
+        }
+
+        .gt-9 {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fde68a;
+        }
+
+        .gt-10 {
+            background-color: #fdf4e6;
+            color: #b45309;
+            border: 1px solid #fed7aa;
+        }
+
+        .empty-state-box {
+            padding: 4rem 1.5rem;
+            text-align: center;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px dashed var(--scout-border);
+            color: var(--scout-text-muted);
+        }
+
+        .empty-icon {
+            font-size: 3.5rem;
+            color: var(--scout-gold);
+            margin-bottom: 1rem;
+            opacity: 0.75;
+        }
+
+        .scout-footer {
+            background: var(--scout-maroon-deep);
+            color: #ffffff;
+            border-top: 3px solid var(--scout-gold);
+            padding: 2.2rem 1rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-logo-small {
+            width: 50px;
+            height: 50px;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 3px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 0 0 2px var(--scout-gold);
+        }
+
+        .month-quicknav-bar {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--scout-border);
+            padding: 12px 16px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .month-quicknav-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--scout-maroon);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .month-quicknav-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scout-maroon) var(--scout-cream-bg);
+        }
+
+        .month-quicknav-scroll::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .month-quicknav-scroll::-webkit-scrollbar-thumb {
+            background: var(--scout-maroon);
+            border-radius: 10px;
+        }
+
+        .quicknav-pill {
+            background: var(--scout-cream-bg);
+            border: 1px solid var(--scout-border);
+            color: var(--scout-maroon-dark);
+            border-radius: 20px;
+            padding: 5px 13px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .quicknav-pill:hover,
+        .quicknav-pill.active {
+            background: var(--scout-maroon);
+            color: #ffffff;
+            border-color: var(--scout-maroon);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(130, 21, 29, 0.25);
+        }
+
+        .quicknav-pill .pill-badge {
+            background: rgba(130, 21, 29, 0.12);
+            color: var(--scout-maroon);
+            border-radius: 10px;
+            padding: 1px 7px;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .quicknav-pill:hover .pill-badge,
+        .quicknav-pill.active .pill-badge {
+            background: #ffffff;
+            color: var(--scout-maroon);
+        }
+
+        @media (max-width: 991px) {
+            .toolbar-actions {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 14px;
+                padding: 14px;
+            }
+
+            .toolbar-group {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .toolbar-label {
+                font-size: 0.85rem;
+            }
+
+            .month-btn-pair,
+            .view-btn-pair {
+                display: flex;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .month-btn-pair .btn-scout-action,
+            .view-btn-pair .btn-scout-action {
+                flex: 1 1 50%;
+                min-width: 0;
+                padding: 8px 10px;
+                font-size: 0.84rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scout-org-title {
+                font-size: 1.45rem;
+            }
+
+            .logo-container {
+                width: 95px;
+                height: 95px;
+            }
+
+            .filter-panel {
+                padding: 16px;
+                margin-top: -24px;
+            }
+
+            .scout-event-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .event-day-box {
+                width: 100%;
+                min-width: 100%;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 8px;
+                padding: 4px 10px;
+            }
+
+            .event-day-sub {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .month-btn-pair .btn-scout-action,
+            .view-btn-pair .btn-scout-action {
+                padding: 8px 6px;
+                font-size: 0.8rem;
+                gap: 4px;
+            }
+
+            .month-btn-pair .btn-scout-action i,
+            .view-btn-pair .btn-scout-action i {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="scout-header text-center">
+        <div class="container header-content">
+            <div class="logo-container" title="شعار جمعية الكشاف السرياني السوري">
+                <img src="logo.png" alt="جمعية الكشاف السرياني السوري" class="logo-img">
+            </div>
+
+            <h1 class="scout-org-title">
+                جمعية الكشاف السرياني السوري
+            </h1>
+
+            <div class="scout-subtitle-syriac">
+                SYRIAN SYRIAC SCOUT
+            </div>
+
+            <p class="scout-page-title">
+                الرزنامة السنوية الكاملة وخطة العمل الاستراتيجية والتنفيذية
+            </p>
+
+            <div class="header-stats-row">
+                <span class="header-pill" id="activeYearPill">
+                    <i class="fas fa-calendar-star"></i>
+                    السنة الكشفية: <strong id="activeYearText">2027</strong>
+                </span>
+                <span class="header-pill" id="totalActivitiesPill">
+                    <i class="fas fa-tasks"></i>
+                    إجمالي الأنشطة: <strong id="totalCountNumber">--</strong> نشاطاً
+                </span>
+                <span class="header-pill">
+                    <i class="fas fa-bullseye"></i>
+                    10 أهداف استراتيجية معتمدة
+                </span>
+                <span class="header-pill">
+                    <i class="fas fa-layer-group"></i>
+                    12 شهراً مبرمجاً
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <section class="filter-panel mb-4">
+            <div class="row g-3 align-items-center">
+                <div class="col-lg-3 col-md-4">
+                    <label class="form-label fw-bold small text-muted mb-1">
+                        <i class="fas fa-calendar-alt text-danger me-1"></i> اختر السنة الكشفية:
+                    </label>
+                    <div class="year-selector-group">
+                        <button type="button" class="year-btn active" id="btnYear2027" onclick="filterYear('2027')">
+                            <i class="fas fa-check-circle"></i> 2027
+                        </button>
+                        <button type="button" class="year-btn" id="btnYear2028" onclick="filterYear('2028')">
+                            <i class="far fa-circle"></i> 2028
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-8">
+                    <label class="form-label fw-bold small text-muted mb-1">
+                        <i class="fas fa-bullseye text-warning me-1"></i> الهدف الاستراتيجي المرجعي:
+                    </label>
+                    <select id="goalFilter" class="form-select form-select-md border-secondary-subtle fw-semibold"
+                        onchange="applyFilters()">
+                        <option value="ALL">جميع الأهداف الاستراتيجية (10 أهداف)</option>
+                        <option value="1">1. تأسيس أكاديمية التدريب (كشفية - موسيقية)</option>
+                        <option value="2">2. منصة تقنية إلكترونية للتحول الرقمي</option>
+                        <option value="3">3. تبادل الخبرات ولقاءات الشباب</option>
+                        <option value="4">4. تطوير دستور الجمعية</option>
+                        <option value="5">5. العالم المستدام والحماية من الأذى</option>
+                        <option value="6">6. الاندماج المجتمعي وقبول الآخر</option>
+                        <option value="7">7. منظومة إعلامية عالية الجودة</option>
+                        <option value="8">8. الشراكات الاستراتيجية والتمويل</option>
+                        <option value="9">9. تأسيس شبكة أصدقاء الكشاف السرياني</option>
+                        <option value="10">10. تقدير التطوع وتكريم القادة</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <label class="form-label fw-bold small text-muted mb-1">
+                        <i class="fas fa-search text-primary me-1"></i> بحث سريع في الأنشطة:
+                    </label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-secondary-subtle">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
+                        <input type="text" id="searchInput" class="form-control border-secondary-subtle"
+                            placeholder="ابحث باسم النشاط..." oninput="applyFilters()">
+                        <button class="btn btn-outline-secondary" type="button" onclick="clearSearch()"
+                            title="مسح البحث">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="toolbar-actions">
+            <div class="toolbar-group month-controls-group">
+                <span class="toolbar-label">
+                    <i class="fas fa-sliders-h text-danger"></i>
+                    <span>التحكم بالأشهر:</span>
+                </span>
+                <div class="month-btn-pair">
+                    <button type="button" class="btn-scout-action" onclick="expandAllMonths()"
+                        title="فتح كافة بطاقات الأشهر">
+                        <i class="fas fa-angle-double-down"></i>
+                        <span>فتح جميع الأشهر</span>
+                    </button>
+                    <button type="button" class="btn-scout-action" onclick="collapseAllMonths()"
+                        title="طي كافة بطاقات الأشهر">
+                        <i class="fas fa-angle-double-up"></i>
+                        <span>طي جميع الأشهر</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="toolbar-group view-controls-group">
+                <span class="toolbar-label">
+                    <i class="fas fa-th-large text-warning"></i>
+                    <span>نمط العرض:</span>
+                </span>
+                <div class="view-btn-pair">
+                    <button type="button" class="btn-scout-action active-view" id="btnGridView"
+                        onclick="setViewMode('grid')" title="عرض شبكي متناسق">
+                        <i class="fas fa-th"></i>
+                        <span>شبكة بطاقات</span>
+                    </button>
+                    <button type="button" class="btn-scout-action" id="btnListView" onclick="setViewMode('list')"
+                        title="عرض كقائمة متسلسلة">
+                        <i class="fas fa-list-ul"></i>
+                        <span>قائمة مفصلة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="strategic-guide-card">
+            <div class="strategic-guide-header" onclick="toggleStrategicGuide()">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="fas fa-compass fa-lg text-danger"></i>
+                    <span class="fw-bold fs-6 text-dark">دليل الأهداف الاستراتيجية المعتمدة للجمعية (10 أهداف)</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border small">انقر للإظهار / الإخفاء</span>
+                    <i class="fas fa-chevron-down text-muted" id="guideChevron"></i>
+                </div>
+            </div>
+
+            <div id="strategicGuideBody" class="p-3"
+                style="display: none; background: #faf9f7; border-top: 1px solid var(--scout-border-subtle);">
+                <div class="row g-2">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('1')">
+                            <span class="goal-chip-num g-color-1">1</span>
+                            <div class="small fw-semibold">تأسيس أكاديمية تدريب (كشفية - موسيقية) لتمكين القادة</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('2')">
+                            <span class="goal-chip-num g-color-2">2</span>
+                            <div class="small fw-semibold">إنشاء منصة تقنية إلكترونية للتحول الرقمي للجمعية</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('3')">
+                            <span class="goal-chip-num g-color-3">3</span>
+                            <div class="small fw-semibold">خلق مساحة لتبادل الخبرات وتخصيص لقاءات الشباب</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('4')">
+                            <span class="goal-chip-num g-color-4">4</span>
+                            <div class="small fw-semibold">تطوير دستور الجمعية وتحديث اللوائح التنظيمية</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('5')">
+                            <span class="goal-chip-num g-color-5">5</span>
+                            <div class="small fw-semibold">مفاهيم العالم المستدام والحماية من الأذى</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('6')">
+                            <span class="goal-chip-num g-color-6">6</span>
+                            <div class="small fw-semibold">برامج تفاعلية لتعزيز الاندماج المجتمعي وقبول الآخر</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('7')">
+                            <span class="goal-chip-num g-color-7">7</span>
+                            <div class="small fw-semibold">بناء منظومة إعلامية لنشر رسالة الجمعية والتسويق</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('8')">
+                            <span class="goal-chip-num g-color-8">8</span>
+                            <div class="small fw-semibold">بناء شراكات استراتيجية لتمويل وتنفيذ البرامج</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('9')">
+                            <span class="goal-chip-num g-color-9">9</span>
+                            <div class="small fw-semibold">تأسيس شبكة ومجموعة أصدقاء الكشاف السرياني السوري</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="goal-chip-item" onclick="filterByGoal('10')">
+                            <span class="goal-chip-num g-color-10">10</span>
+                            <div class="small fw-semibold">تقدير التطوع وتكريم القادة ورواد الحركة الكشفية</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="month-quicknav-bar mb-4" aria-label="الانتقال السريع للأشهر">
+            <div class="month-quicknav-title">
+                <i class="fas fa-calendar-week text-warning"></i>
+                <span>انتقال سريع للأشهر:</span>
+            </div>
+            <div class="month-quicknav-scroll" id="monthQuicknav"></div>
+        </nav>
+
+        <div id="monthsContainer" class="months-grid grid-view"></div>
+    </main>
+
+    <footer class="scout-footer">
+        <div class="container">
+            <div class="footer-logo-small">
+                <img src="logo.png" alt="شعار الجمعية" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <h5 class="fw-bold mb-1">جمعية الكشاف السرياني السوري</h5>
+            <p class="small text-white-50 mb-3">SYRIAN SYRIAC SCOUT • اللجنة الإدارية</p>
+            <div class="border-top border-secondary pt-3 small text-white-50">
+                جميع الحقوق محفوظة © <span id="currentFooterYear"></span> - الرزنامة السنوية والخطة الاستراتيجية الكاملة
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const MONTHS_ORDER = [
+            { id: 1, name: 'كانون الثاني (يناير)', key: 'كانون الثاني (يناير)' },
+            { id: 2, name: 'شباط (فبراير)', key: 'شباط (فبراير)' },
+            { id: 3, name: 'آذار (مارس)', key: 'آذار (مارس)' },
+            { id: 4, name: 'نيسان (أبريل)', key: 'نيسان (أبريل)' },
+            { id: 5, name: 'أيار (مايو)', key: 'أيار (مايو)' },
+            { id: 6, name: 'حزيران (يونيو)', key: 'حزيران (يونيو)' },
+            { id: 7, name: 'تموز (يوليو)', key: 'تموز (يوليو)' },
+            { id: 8, name: 'آب (أغسطس)', key: 'آب (أغسطس)' },
+            { id: 9, name: 'أيلول (سبتمبر)', key: 'أيلول (سبتمبر)' },
+            { id: 10, name: 'تشرين الأول (أكتوبر)', key: 'تشرين الأول (أكتوبر)' },
+            { id: 11, name: 'تشرين الثاني (نوفمبر)', key: 'تشرين الثاني (نوفمبر)' },
+            { id: 12, name: 'كانون الأول (ديسمبر)', key: 'كانون الأول (ديسمبر)' }
+        ];
+
+        const GOALS_MAP = {
+            '1': { title: 'أكاديمية التدريب (كشفية - موسيقية)', class: 'gt-1', icon: 'fa-graduation-cap' },
+            '2': { title: 'منصة تقنية وتحول رقمي', class: 'gt-2', icon: 'fa-laptop-code' },
+            '3': { title: 'تبادل الخبرات ولقاءات الشباب', class: 'gt-3', icon: 'fa-users' },
+            '4': { title: 'تطوير دستور الجمعية', class: 'gt-4', icon: 'fa-book' },
+            '5': { title: 'العالم المستدام والحماية من الأذى', class: 'gt-5', icon: 'fa-shield-halved' },
+            '6': { title: 'الاندماج المجتمعي وقبول الآخر', class: 'gt-6', icon: 'fa-hands-holding-child' },
+            '7': { title: 'منظومة إعلامية وتسويق', class: 'gt-7', icon: 'fa-bullhorn' },
+            '8': { title: 'الشراكات الاستراتيجية والتمويل', class: 'gt-8', icon: 'fa-handshake' },
+            '9': { title: 'أصدقاء الكشاف السرياني', class: 'gt-9', icon: 'fa-user-group' },
+            '10': { title: 'تقدير التطوع وتكريم القادة', class: 'gt-10', icon: 'fa-medal' }
+        };
+
+        let allEvents = [
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '1 - 8', title: 'بناء قاعدة بيانات اولية لشبكة اصدقاء الكشاف السرياني وتشكيل اللجنة التاسيسة / خلال الشهر الاول', goals: ['8', '9'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '', title: 'تشكيل لجنة الاندماج المجتمعي', goals: ['8', '9'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '9', title: 'تحديث قاعدة بيانات أعضاء الجمعية على مستوى سوريا بمساعدة أمانة السر في الأفواج.', goals: ['8', '9'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '10', title: 'لقاء الحوار الأول للشباب (أونلاين) فريقين رسل السلام و قادة الحياة', goals: ['2', '3', '6'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '15', title: 'الطرح الأولي لخطة المنصة و التصميم', goals: ['2', '3', '6'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '16', title: 'تشكيل لجنة الاندماج المجتمعي من القادة ذو الخبرة', goals: ['2', '3', '6'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '18', title: 'اجتماع لجنة المناهج الكشفية (أونلاين)', goals: ['1'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '28', title: 'إنشاء ملف تعريفي احترافي عن الجمعية يحوي الإنجازات التي قامت بها في السنوات الماضية.', goals: ['1', '3', '8'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '29', title: 'إطلاق فريق تنظيم مبادرات ل Messengers of Peace رسل السلام في سوريا', goals: ['1', '3', '8'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1', '3', '8'] },
+            { year: '2027', month: 'كانون الثاني (يناير)', day: '31', title: 'عرض نتائج هدف تخصيص فريق الميديا واقتراحات لأي تعديلات', goals: ['7'] },
+
+            { year: '2027', month: 'شباط (فبراير)', day: '10', title: 'إطلاق فريق LifeLeaders من سوريا لتنظيم تدريبات ومهارات', goals: ['3', '8'] },
+            { year: '2027', month: 'شباط (فبراير)', day: '12', title: 'إنشاء قاعدة بيانات للجهات المستهدفة المشابهة لأهدافنا واهتماماتنا وتحديد مجالات التعاون الممكنة معها.', goals: ['3', '8'] },
+            { year: '2027', month: 'شباط (فبراير)', day: '15', title: 'اجتماع لجنة المناهج الكشفية (أونلاين)', goals: ['1', '2'] },
+            { year: '2027', month: 'شباط (فبراير)', day: '16', title: 'الأنتهاء من التعديلات على تصميم المنصة', goals: ['1', '2'] },
+            { year: '2027', month: 'شباط (فبراير)', day: '22', title: 'احتفالية بعنوان "في يوم المؤسس" + اطلاق قناة التواصل الرقمية الخاصة بشبكة اصدقاء الكشاف السرياني', goals: ['3', '8', '9'] },
+            { year: '2027', month: 'شباط (فبراير)', day: '26', title: 'البدء بالتواصل مع الجهات والتعريف عن الجمعية بعقد اجتماعات.', goals: ['3', '8', '9'] },
+            { year: '2027', month: 'شباط (فبراير)', day: '28', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
+
+            { year: '2027', month: 'آذار (مارس)', day: '8', title: 'اليوم العالمي للمرأة', goals: ['3', '6', '8'] },
+            { year: '2027', month: 'آذار (مارس)', day: '10', title: 'متابعة التواصل مع الجهات المستهدفة وتطوير العلاقات.', goals: ['3', '6', '8'] },
+            { year: '2027', month: 'آذار (مارس)', day: '11', title: 'اللقاء الأول ل Messengers of Peace رسل السلام في سوريا', goals: ['3', '6', '8'] },
+            { year: '2027', month: 'آذار (مارس)', day: '12 - 13', title: 'التحضير للأنشطة والمبادرات وورشات قبول الآخر وتطوير المناهج الكشفية', goals: ['3', '6', '8'] },
+            { year: '2027', month: 'آذار (مارس)', day: '14', title: 'رزنامة الأنشطة في كل المحافظات', goals: ['1', '3'] },
+            { year: '2027', month: 'آذار (مارس)', day: '15', title: 'اجتماع لجنة التدريب الكشفي في أبرشية الجزيرة (أونلاين)', goals: ['1', '3'] },
+            { year: '2027', month: 'آذار (مارس)', day: '18 - 21', title: 'الدراسة التمهيدية للشارة الخشبية (أبرشية الجزيرة)', goals: ['1'] },
+            { year: '2027', month: 'آذار (مارس)', day: '20', title: 'اليوم الدولي للسعادة (ممكن رسل السلام ينشرون السعادة)', goals: ['1', '3'] },
+            { year: '2027', month: 'آذار (مارس)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1', '2', '8'] },
+            { year: '2027', month: 'آذار (مارس)', day: '30', title: 'عقد اجتماعات تنسيقية مع الجهات.', goals: ['1', '2', '8'] },
+            { year: '2027', month: 'آذار (مارس)', day: '31', title: 'طرح التصميم الأولي و النسخة التجريبية 1.0V للمنصة', goals: ['1', '2', '8'] },
+
+            { year: '2027', month: 'نيسان (أبريل)', day: '1', title: 'التحضير لمبادرة في أسبوع الآلام و الفصح', goals: ['1', '3', '6'] },
+            { year: '2027', month: 'نيسان (أبريل)', day: '7', title: 'يوم الصحة العالمي', goals: ['1', '3', '6'] },
+            { year: '2027', month: 'نيسان (أبريل)', day: '15', title: 'اجتماع لجنة المناهج الكشفية (أونلاين)', goals: ['1', '3', '6'] },
+            { year: '2027', month: 'نيسان (أبريل)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
+            { year: '2027', month: 'نيسان (أبريل)', day: '30', title: 'تقييم النسخة التجريبية الأولى واقتراح التعديلات اللازمة.', goals: ['2', '8'] },
+
+            { year: '2027', month: 'أيار (مايو)', day: '15', title: 'إطلاق النسخة المحدثة 2.0V وتجربتها على نطاق أوسع.', goals: ['2'] },
+            { year: '2027', month: 'أيار (مايو)', day: '20', title: 'لقاء الحوار الثاني للشباب أونلاين', goals: ['3'] },
+            { year: '2027', month: 'أيار (مايو)', day: '28', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
+
+            { year: '2027', month: 'حزيران (يونيو)', day: '1 - 30', title: 'البدء بتنظيم معسكرات الصيف والدورات التدريبية في مختلف الأبرشيات', goals: ['1', '6'] },
+            { year: '2027', month: 'حزيران (يونيو)', day: '15', title: 'اجتماع لجنة المناهج لمتابعة التطبيقات العملية في المخيمات', goals: ['1'] },
+            { year: '2027', month: 'حزيران (يونيو)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
+
+            { year: '2027', month: 'تموز (يوليو)', day: '1 - 31', title: 'مخيمات الأطفال والفرسان والزهرات الكشفية', goals: ['1', '6'] },
+            { year: '2027', month: 'تموز (يوليو)', day: '15', title: 'ورشات العمل الميدانية لقبول الآخر والاندماج المجتمعي', goals: ['6'] },
+            { year: '2027', month: 'تموز (يوليو)', day: '28', title: 'اجتماع تقييمي للمخيمات الصيفية النصفية', goals: ['1'] },
+
+            { year: '2027', month: 'آب (أغسطس)', day: '12', title: 'اليوم العالمي للشباب - فعاليات ومبادرات شبابية في المحافظات', goals: ['3', '6'] },
+            { year: '2027', month: 'آب (أغسطس)', day: '18 - 25', title: 'دراسة الشارة الخشبية الرسمية للقادة', goals: ['1'] },
+
+            { year: '2027', month: 'أيلول (سبتمبر)', day: '15', title: 'اجتماع تقييم أنشطة الصيف والخروج بالتوصيات', goals: ['1', '3'] },
+            { year: '2027', month: 'أيلول (سبتمبر)', day: '21', title: 'اليوم العالمي للسلام - مبادرات رسل السلام', goals: ['3', '6'] },
+
+            { year: '2027', month: 'تشرين الأول (أكتوبر)', day: '5', title: 'التحضير للعام الكشفي الجديد واجتماعات مجالس الأفواج', goals: ['1'] },
+            { year: '2027', month: 'تشرين الثاني (نوفمبر)', day: '15', title: 'ورشة عمل حول التحول الرقمي واستخدام المنصة الجديدة', goals: ['2'] },
+            { year: '2027', month: 'كانون الأول (ديسمبر)', day: '20 - 30', title: 'الأنشطة الاحتفالية والميلادية ومبادرات خدمة المجتمع', goals: ['3', '6', '10'] },
+
+            { year: '2028', month: 'كانون الثاني (يناير)', day: '8', title: 'اعتماد مفاهيم الاندماج ضمن المناهج الكشفية', goals: ['6'] },
+            { year: '2028', month: 'كانون الثاني (يناير)', day: '15', title: 'تطوير مقترحات ومشاريع بحيث تتناسب مع اهدافنا وأولويات الشراكات.', goals: ['8'] },
+            { year: '2028', month: 'كانون الثاني (يناير)', day: '17', title: 'اجتماع لجنة المناهج الكشفية (أونلاين) والانطلاق ب برامج السنة الجديدة', goals: ['1', '6'] },
+            { year: '2028', month: 'كانون الثاني (يناير)', day: '18', title: 'اعتماد دليل الشراكة وتعميمه', goals: ['8'] },
+            { year: '2028', month: 'كانون الثاني (يناير)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
+
+            { year: '2028', month: 'شباط (فبراير)', day: '12', title: 'تدريب القادة على تطبيق الأنشطة الدامجة', goals: ['6'] },
+            { year: '2028', month: 'شباط (فبراير)', day: '14', title: 'اجتماع لجنة التدريب الكشفي (أونلاين) والانطلاق ب وضع برنامج تدريبي للسنة الجديدة', goals: ['1', '8'] },
+            { year: '2028', month: 'شباط (فبراير)', day: '15', title: 'تأمين الموارد المالية اللازمة لتنفيذ البرامج المحددة.', goals: ['8'] },
+            { year: '2028', month: 'شباط (فبراير)', day: '19', title: 'تنويع مصادر الدعم والبحث عن جهات جديدة.', goals: ['8'] },
+            { year: '2028', month: 'شباط (فبراير)', day: '23', title: 'إطلاق برنامج «صديق لكل فوج»', goals: ['9'] },
+            { year: '2028', month: 'شباط (فبراير)', day: '25', title: 'مؤتمر شباب الكشاف (الجوالة)', goals: ['3'] },
+
+            { year: '2028', month: 'آذار (مارس)', day: '1 - 4', title: 'العمل على بنك الخبرات (توثيق صور وفيديو)', goals: ['1', '7'] },
+            { year: '2028', month: 'آذار (مارس)', day: '8', title: 'البدء بالتواصل مع الجهات والتعريف عن الجمعية بعقد اجتماعات.', goals: ['8'] },
+            { year: '2028', month: 'آذار (مارس)', day: '10', title: 'إطلاق مبادرة من الشباب مع ربطها ب رسل السلام', goals: ['3'] },
+            { year: '2028', month: 'آذار (مارس)', day: '11', title: 'لقاء لتبادل التجارب والخبرات', goals: ['3'] },
+            { year: '2028', month: 'آذار (مارس)', day: '14', title: 'توسيع الشراكات المجتمعية', goals: ['8'] },
+            { year: '2028', month: 'آذار (مارس)', day: '16 - 19', title: 'الدراسة التحضيرية للشارة الخشبية (أبرشية الجزيرة)', goals: ['1'] },
+            { year: '2028', month: 'آذار (مارس)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
+
+            { year: '2028', month: 'نيسان (أبريل)', day: '5', title: 'التحضير للأنشطة والاحتفالات الفصحية والمبادرات', goals: ['3', '6'] },
+            { year: '2028', month: 'أيار (مايو)', day: '12', title: 'ورش تدريبية إقليمية للقادة والجوالة', goals: ['1', '3'] },
+            { year: '2028', month: 'حزيران (يونيو)', day: '20 - 30', title: 'افتتاح الموسم المخيمي الصيفي للكشاف السرياني', goals: ['1', '6'] },
+            { year: '2028', month: 'تموز (يوليو)', day: '1 - 31', title: 'المخيمات الفرعية ودورات المهارات الكشفية والموسيقية', goals: ['1'] },
+            { year: '2028', month: 'آب (أغسطس)', day: '15', title: 'لقاء الجوالة السنوي وتكريم القادة المتميزين', goals: ['3', '10'] },
+            { year: '2028', month: 'أيلول (سبتمبر)', day: '25', title: 'اجتماع التقييم السنوي للأنشطة الصيفية', goals: ['1'] },
+            { year: '2028', month: 'تشرين الأول (أكتوبر)', day: '10', title: 'إطلاق الدليل المحدث للمناهج الكشفية والموسيقية', goals: ['1'] },
+            { year: '2028', month: 'تشرين الثاني (نوفمبر)', day: '18', title: 'المنتدى الكشفي الرقمي للشباب', goals: ['2', '3'] },
+            { year: '2028', month: 'كانون الأول (ديسمبر)', day: '25', title: 'حفل التكريم السنوي للداعمين والقادة وأصدقاء الكشاف', goals: ['9', '10'] }
+        ];
+
+        let currentYear = '2027';
+        let currentView = 'grid'; // 'grid' أو 'list'
+        let monthExpandedState = {};
+
+        function initApp() {
+            MONTHS_ORDER.forEach(m => {
+                monthExpandedState[m.key] = true;
+            });
+            const footerYear = document.getElementById('currentFooterYear');
+            if (footerYear) footerYear.textContent = new Date().getFullYear();
+            applyFilters();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
+
+        function filterYear(year) {
+            currentYear = year;
+            document.getElementById('activeYearText').textContent = year;
+
+            const btn2027 = document.getElementById('btnYear2027');
+            const btn2028 = document.getElementById('btnYear2028');
+
+            if (year === '2027') {
+                btn2027.className = 'year-btn active';
+                btn2027.innerHTML = '<i class="fas fa-check-circle"></i> 2027';
+                btn2028.className = 'year-btn';
+                btn2028.innerHTML = '<i class="far fa-circle"></i> 2028';
+            } else {
+                btn2028.className = 'year-btn active';
+                btn2028.innerHTML = '<i class="fas fa-check-circle"></i> 2028';
+                btn2027.className = 'year-btn';
+                btn2027.innerHTML = '<i class="far fa-circle"></i> 2027';
+            }
+
+            applyFilters();
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+        }
+
+        function filterByGoal(goalId) {
+            document.getElementById('goalFilter').value = goalId;
+            applyFilters();
+            document.getElementById('monthsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function toggleStrategicGuide() {
+            const body = document.getElementById('strategicGuideBody');
+            const icon = document.getElementById('guideChevron');
+            if (body.style.display === 'none' || body.style.display === '') {
+                body.style.display = 'block';
+                icon.className = 'fas fa-chevron-up text-muted';
+            } else {
+                body.style.display = 'none';
+                icon.className = 'fas fa-chevron-down text-muted';
+            }
+        }
+
+        function setViewMode(mode) {
+            currentView = mode;
+            const container = document.getElementById('monthsContainer');
+            const btnGrid = document.getElementById('btnGridView');
+            const btnList = document.getElementById('btnListView');
+
+            if (mode === 'grid') {
+                container.classList.remove('list-view');
+                container.classList.add('grid-view');
+                btnGrid.classList.add('active-view');
+                btnList.classList.remove('active-view');
+            } else {
+                container.classList.remove('grid-view');
+                container.classList.add('list-view');
+                btnList.classList.add('active-view');
+                btnGrid.classList.remove('active-view');
+            }
+        }
+
+        function expandAllMonths() {
+            MONTHS_ORDER.forEach(m => {
+                monthExpandedState[m.key] = true;
+            });
+            document.querySelectorAll('.month-card').forEach(card => {
+                card.classList.add('is-expanded');
+                const content = card.querySelector('.month-content');
+                if (content) content.style.display = 'block';
+            });
+        }
+
+        function collapseAllMonths() {
+            MONTHS_ORDER.forEach(m => {
+                monthExpandedState[m.key] = false;
+            });
+            document.querySelectorAll('.month-card').forEach(card => {
+                card.classList.remove('is-expanded');
+                const content = card.querySelector('.month-content');
+                if (content) content.style.display = 'none';
+            });
+        }
+
+        function toggleMonthCard(monthKey) {
+            const card = document.getElementById(`month-card-${monthKey}`);
+            if (!card) return;
+
+            const isCurrentlyExpanded = card.classList.contains('is-expanded');
+            const content = card.querySelector('.month-content');
+
+            if (isCurrentlyExpanded) {
+                card.classList.remove('is-expanded');
+                if (content) content.style.display = 'none';
+                monthExpandedState[monthKey] = false;
+            } else {
+                card.classList.add('is-expanded');
+                if (content) content.style.display = 'block';
+                monthExpandedState[monthKey] = true;
+            }
+        }
+
+        function applyFilters() {
+            const selectedGoal = document.getElementById('goalFilter').value;
+            const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
+            const container = document.getElementById('monthsContainer');
+
+            const filteredEvents = allEvents.filter(ev => {
+                const matchYear = ev.year === currentYear;
+                const matchGoal = (selectedGoal === 'ALL') || ev.goals.includes(selectedGoal);
+                const matchSearch = !searchText ||
+                    ev.title.toLowerCase().includes(searchText) ||
+                    ev.month.toLowerCase().includes(searchText) ||
+                    (ev.day && ev.day.toLowerCase().includes(searchText));
+                return matchYear && matchGoal && matchSearch;
+            });
+
+            document.getElementById('totalCountNumber').textContent = filteredEvents.length;
+
+            if (filteredEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state-box col-12 w-100">
+                        <i class="fas fa-search-minus empty-icon"></i>
+                        <h4 class="fw-bold mb-2">لا توجد أنشطة كشفية مطابقة لخيارات البحث</h4>
+                        <p class="small text-muted mb-3">لم يتم العثور على أي نشاط للعام ${currentYear} بحسب شروط التصفية الحالية.</p>
+                        <button class="btn btn-outline-danger btn-sm px-4 fw-bold" onclick="resetFilters()">
+                            <i class="fas fa-undo me-1"></i> إعادة ضبط كافة الفلاتر
+                        </button>
+                    </div>
+                `;
+                updateQuicknav({});
+                return;
+            }
+
+            const eventsByMonth = {};
+            filteredEvents.forEach(ev => {
+                if (!eventsByMonth[ev.month]) {
+                    eventsByMonth[ev.month] = [];
+                }
+                eventsByMonth[ev.month].push(ev);
+            });
+
+            let outputHtml = '';
+
+            MONTHS_ORDER.forEach(m => {
+                const list = eventsByMonth[m.key] || [];
+                const isFilteredView = (selectedGoal !== 'ALL' || searchText !== '');
+                if (isFilteredView && list.length === 0) {
+                }
+
+                const isExpanded = monthExpandedState[m.key] !== false;
+                const paddedNum = m.id < 10 ? '0' + m.id : m.id;
+                const activityCount = list.length;
+                const countText = activityCount === 1 ? 'نشاط واحد' :
+                    activityCount === 2 ? 'نشاطان' :
+                        activityCount > 2 && activityCount <= 10 ? `${activityCount} أنشطة` :
+                            `${activityCount} نشاط`;
+
+                outputHtml += `
+                    <article class="month-card ${isExpanded ? 'is-expanded' : ''}" id="month-card-${m.key}">
+                        <!-- ترويسة بطاقة الشهر القابلة للضغط للفتح والطي -->
+                        <button type="button" class="month-header-btn" onclick="toggleMonthCard('${m.key}')" aria-expanded="${isExpanded}">
+                            <div class="month-info-box">
+                                <div class="month-num-badge" title="شهر رقم ${m.id}">
+                                    ${paddedNum}
+                                </div>
+                                <div class="month-title-wrapper">
+                                    <h3 class="month-title-text">${m.name}</h3>
+                                </div>
+                            </div>
+                            <div class="month-header-actions">
+                                <span class="month-count-pill" title="عدد الأنشطة في هذا الشهر">
+                                    <i class="fas fa-clipboard-check"></i> ${countText}
+                                </span>
+                                <div class="toggle-arrow-circle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </button>
+
+                        <!-- قائمة فعاليات الشهر المتناسقة بدقة -->
+                        <div class="month-content" style="${isExpanded ? 'display: block;' : 'display: none;'}">
+                `;
+
+                if (list.length === 0) {
+                    outputHtml += `
+                        <div class="py-3 text-center text-muted small">
+                            <i class="far fa-calendar-times me-1"></i> لا توجد أنشطة مجدولة في هذا الشهر
+                        </div>
+                    `;
+                } else {
+                    list.forEach(ev => {
+                        const dayString = ev.day ? ev.day : 'خلال الشهر';
+                        const isSpecificDay = Boolean(ev.day);
+
+                        const badgesHtml = ev.goals.map(g => {
+                            const goalData = GOALS_MAP[g] || { title: `هدف ${g}`, class: 'gt-1', icon: 'fa-check' };
+                            return `
+                                <span class="goal-tag ${goalData.class}" title="${goalData.title}">
+                                    <i class="fas ${goalData.icon}"></i>
+                                    <span>هدف ${g}</span>
+                                </span>
+                            `;
+                        }).join('');
+
+                        outputHtml += `
+                            <div class="scout-event-item">
+                                <!-- خانة التاريخ بمحاذاة ثابتة -->
+                                <div class="event-day-box" title="${isSpecificDay ? 'تاريخ النشاط' : 'ممتد خلال الشهر'}">
+                                    <span class="event-day-badge">
+                                        <i class="${isSpecificDay ? 'fas fa-calendar-alt' : 'far fa-clock'} me-1"></i>${dayString}
+                                    </span>
+                                    <span class="event-day-sub">
+                                        ${isSpecificDay ? 'اليوم المجدول' : 'طيلة الشهر'}
+                                    </span>
+                                </div>
+
+                                <!-- محتوى وتفاصيل النشاط والوسوم الاستراتيجية -->
+                                <div class="event-body">
+                                    <div class="event-title">${ev.title}</div>
+                                    <div class="event-badges-row">
+                                        ${badgesHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                outputHtml += `
+                        </div>
+                    </article>
+                `;
+            });
+
+            container.innerHTML = outputHtml;
+            updateQuicknav(eventsByMonth);
+        }
+
+        function updateQuicknav(eventsByMonth) {
+            const nav = document.getElementById('monthQuicknav');
+            if (!nav) return;
+            let html = '';
+            MONTHS_ORDER.forEach(m => {
+                const count = (eventsByMonth[m.key] || []).length;
+                html += `
+                    <button type="button" class="quicknav-pill" onclick="scrollToMonth('${m.key}')" title="الانتقال إلى شهر ${m.name}">
+                        <span>${m.id}. ${m.name.split(' ')[0]}</span>
+                        <span class="pill-badge">${count}</span>
+                    </button>
+                `;
+            });
+            nav.innerHTML = html;
+        }
+
+        function scrollToMonth(monthKey) {
+            monthExpandedState[monthKey] = true;
+            const card = document.getElementById(`month-card-${monthKey}`);
+            if (card) {
+                card.classList.add('is-expanded');
+                const content = card.querySelector('.month-content');
+                if (content) content.style.display = 'block';
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                card.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
+                card.style.borderColor = 'var(--scout-gold)';
+                card.style.boxShadow = '0 0 0 4px rgba(198, 146, 34, 0.4)';
+                setTimeout(() => {
+                    card.style.borderColor = '';
+                    card.style.boxShadow = '';
+                }, 1400);
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('goalFilter').value = 'ALL';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+        }
+    </script>
+</body>
+
+</html>
