@@ -451,33 +451,97 @@
         }
 
         .event-day-box {
-            width: 88px;
-            min-width: 88px;
-            background: var(--scout-cream-bg);
+            width: 96px;
+            min-width: 96px;
+            background: linear-gradient(180deg, #fdfbf8 0%, #f7f4ed 100%);
             border: 1px solid var(--scout-border);
-            border-radius: 10px;
-            padding: 6px 4px;
+            border-radius: 12px;
+            padding: 8px 6px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(90, 12, 19, 0.04);
+            transition: all 0.22s ease;
         }
 
-        .event-day-badge {
-            font-size: 0.88rem;
+        .event-day-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(130, 21, 29, 0.08);
+            color: var(--scout-maroon);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            margin-bottom: 5px;
+            transition: all 0.22s ease;
+        }
+
+        .event-day-box.is-month-wide .event-day-icon {
+            background: rgba(198, 146, 34, 0.14);
+            color: var(--scout-gold-dark);
+        }
+
+        .event-day-num {
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--scout-maroon-dark);
-            line-height: 1.2;
+            line-height: 1.15;
             direction: ltr;
+            margin-bottom: 5px;
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+
+        .event-day-num.range-num {
+            font-size: 0.92rem;
+            letter-spacing: 0;
+        }
+
+        .event-day-num.text-num {
+            font-size: 0.78rem;
+            font-weight: 700;
+            direction: rtl;
         }
 
         .event-day-sub {
-            font-size: 0.68rem;
-            color: var(--scout-text-muted);
-            font-weight: 600;
-            margin-top: 2px;
+            font-size: 0.67rem;
+            font-weight: 700;
+            color: var(--scout-maroon);
+            background: rgba(130, 21, 29, 0.06);
+            border: 1px solid rgba(130, 21, 29, 0.14);
+            border-radius: 10px;
+            padding: 2px 7px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .event-day-box.is-month-wide .event-day-sub {
+            color: var(--scout-gold-dark);
+            background: rgba(198, 146, 34, 0.1);
+            border-color: rgba(198, 146, 34, 0.25);
+        }
+
+        .scout-event-item:hover .event-day-box {
+            border-color: rgba(198, 146, 34, 0.45);
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(130, 21, 29, 0.09);
+        }
+
+        .scout-event-item:hover .event-day-icon {
+            background: var(--scout-maroon);
+            color: #ffffff;
+            transform: scale(1.08);
+        }
+
+        .scout-event-item:hover .event-day-box.is-month-wide .event-day-icon {
+            background: var(--scout-gold);
+            color: #ffffff;
         }
 
         .event-body {
@@ -518,6 +582,114 @@
         .goal-tag:hover {
             transform: scale(1.04);
             filter: brightness(0.92);
+        }
+
+        .vmv-item-card {
+            background: #ffffff;
+            border: 1px solid var(--scout-border-subtle);
+            border-top: 4px solid var(--scout-maroon);
+            border-radius: var(--radius-md);
+            padding: 22px 20px;
+            box-shadow: 0 4px 14px rgba(130, 21, 29, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+        }
+
+        .vmv-item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(130, 21, 29, 0.08);
+            border-color: var(--scout-gold);
+        }
+
+        .vmv-vision-card {
+            border-top-color: var(--scout-maroon);
+        }
+
+        .vmv-mission-card {
+            border-top-color: var(--scout-gold);
+        }
+
+        .vmv-values-card {
+            border-top-color: #1e3a8a;
+        }
+
+        .vmv-card-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .vmv-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: #ffffff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .vmv-vision-card .vmv-icon-box {
+            background: linear-gradient(135deg, var(--scout-maroon), var(--scout-maroon-dark));
+            border: 1.5px solid var(--scout-gold-light);
+        }
+
+        .vmv-mission-card .vmv-icon-box {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            border: 1.5px solid #fde68a;
+        }
+
+        .vmv-values-card .vmv-icon-box {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            border: 1.5px solid #bfdbfe;
+        }
+
+        .vmv-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--scout-maroon-deep);
+            margin: 0;
+        }
+
+        .vmv-desc {
+            font-size: 0.94rem;
+            line-height: 1.75;
+            color: var(--scout-text-main);
+            font-weight: 600;
+        }
+
+        .vmv-pills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .vmv-pill {
+            background: var(--scout-cream-bg);
+            border: 1px solid var(--scout-border);
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--scout-maroon-deep);
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .vmv-pill:hover {
+            background: #ffffff;
+            border-color: var(--scout-gold);
+            transform: scale(1.04);
+            color: var(--scout-maroon);
         }
 
         .strategic-guide-card {
@@ -851,12 +1023,32 @@
                 min-width: 100%;
                 flex-direction: row;
                 justify-content: flex-start;
+                align-items: center;
                 gap: 8px;
-                padding: 4px 10px;
+                padding: 6px 12px;
+                background: #faf8f5;
+                box-shadow: none;
+            }
+
+            .event-day-icon {
+                margin-bottom: 0;
+                width: 26px;
+                height: 26px;
+                font-size: 0.75rem;
+                flex-shrink: 0;
+                order: 1;
             }
 
             .event-day-sub {
-                margin-top: 0;
+                font-size: 0.72rem;
+                padding: 2px 6px;
+                order: 2;
+            }
+
+            .event-day-num {
+                margin-bottom: 0;
+                font-size: 0.95rem;
+                order: 3;
             }
         }
 
@@ -1014,6 +1206,77 @@
             </div>
         </div>
 
+        <section class="strategic-guide-card vmv-card mb-4">
+            <div class="strategic-guide-header" onclick="toggleVmvSection()">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="fas fa-shield-halved fa-lg text-danger"></i>
+                    <span class="fw-bold fs-6 text-dark">المرتكزات الاستراتيجية للجمعية (الرؤية • الرسالة •
+                        القيم)</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border small">انقر للإظهار / الإخفاء</span>
+                    <i class="fas fa-chevron-up text-muted" id="vmvChevron"></i>
+                </div>
+            </div>
+
+            <div id="vmvBody" class="p-3 p-md-4"
+                style="background: #faf9f7; border-top: 1px solid var(--scout-border-subtle);">
+                <div class="row g-3">
+                    <!-- الرؤية -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="vmv-item-card vmv-vision-card h-100">
+                            <div class="vmv-card-top">
+                                <div class="vmv-icon-box">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h4 class="vmv-title">الرؤية</h4>
+                            </div>
+                            <p class="vmv-desc mb-0">
+                                أن تكون الحركة الكنسية السريانية المُلهمة والرائدة التي تهيئ مساحة آمنة تسهم في تمكين
+                                قادة كشفيين فاعلين في وطنهم.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- الرسالة -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="vmv-item-card vmv-mission-card h-100">
+                            <div class="vmv-card-top">
+                                <div class="vmv-icon-box">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <h4 class="vmv-title">الرسالة</h4>
+                            </div>
+                            <div class="vmv-pills-list">
+                                <span class="vmv-pill">الانتماء</span>
+                                <span class="vmv-pill">الخدمة</span>
+                                <span class="vmv-pill">المحبة</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- القيم -->
+                    <div class="col-lg-4 col-md-12">
+                        <div class="vmv-item-card vmv-values-card h-100">
+                            <div class="vmv-card-top">
+                                <div class="vmv-icon-box">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <h4 class="vmv-title">القيم</h4>
+                            </div>
+                            <div class="vmv-pills-list">
+                                <span class="vmv-pill">المسؤولية</span>
+                                <span class="vmv-pill">الإبداع</span>
+                                <span class="vmv-pill">التواضع</span>
+                                <span class="vmv-pill">العدالة</span>
+                                <span class="vmv-pill">التقدير</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="strategic-guide-card">
             <div class="strategic-guide-header" onclick="toggleStrategicGuide()">
                 <div class="d-flex align-items-center gap-2">
@@ -1150,96 +1413,167 @@
         };
 
         let allEvents = [
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '1 - 8', title: 'بناء قاعدة بيانات اولية لشبكة اصدقاء الكشاف السرياني وتشكيل اللجنة التاسيسة / خلال الشهر الاول', goals: ['8', '9'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '', title: 'تشكيل لجنة الاندماج المجتمعي', goals: ['8', '9'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '9', title: 'تحديث قاعدة بيانات أعضاء الجمعية على مستوى سوريا بمساعدة أمانة السر في الأفواج.', goals: ['8', '9'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '10', title: 'لقاء الحوار الأول للشباب (أونلاين) فريقين رسل السلام و قادة الحياة', goals: ['2', '3', '6'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '15', title: 'الطرح الأولي لخطة المنصة و التصميم', goals: ['2', '3', '6'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '16', title: 'تشكيل لجنة الاندماج المجتمعي من القادة ذو الخبرة', goals: ['2', '3', '6'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '18', title: 'اجتماع لجنة المناهج الكشفية (أونلاين)', goals: ['1'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '28', title: 'إنشاء ملف تعريفي احترافي عن الجمعية يحوي الإنجازات التي قامت بها في السنوات الماضية.', goals: ['1', '3', '8'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '29', title: 'إطلاق فريق تنظيم مبادرات ل Messengers of Peace رسل السلام في سوريا', goals: ['1', '3', '8'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1', '3', '8'] },
-            { year: '2027', month: 'كانون الثاني (يناير)', day: '31', title: 'عرض نتائج هدف تخصيص فريق الميديا واقتراحات لأي تعديلات', goals: ['7'] },
-
-            { year: '2027', month: 'شباط (فبراير)', day: '10', title: 'إطلاق فريق LifeLeaders من سوريا لتنظيم تدريبات ومهارات', goals: ['3', '8'] },
-            { year: '2027', month: 'شباط (فبراير)', day: '12', title: 'إنشاء قاعدة بيانات للجهات المستهدفة المشابهة لأهدافنا واهتماماتنا وتحديد مجالات التعاون الممكنة معها.', goals: ['3', '8'] },
-            { year: '2027', month: 'شباط (فبراير)', day: '15', title: 'اجتماع لجنة المناهج الكشفية (أونلاين)', goals: ['1', '2'] },
-            { year: '2027', month: 'شباط (فبراير)', day: '16', title: 'الأنتهاء من التعديلات على تصميم المنصة', goals: ['1', '2'] },
-            { year: '2027', month: 'شباط (فبراير)', day: '22', title: 'احتفالية بعنوان "في يوم المؤسس" + اطلاق قناة التواصل الرقمية الخاصة بشبكة اصدقاء الكشاف السرياني', goals: ['3', '8', '9'] },
-            { year: '2027', month: 'شباط (فبراير)', day: '26', title: 'البدء بالتواصل مع الجهات والتعريف عن الجمعية بعقد اجتماعات.', goals: ['3', '8', '9'] },
-            { year: '2027', month: 'شباط (فبراير)', day: '28', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
-
-            { year: '2027', month: 'آذار (مارس)', day: '8', title: 'اليوم العالمي للمرأة', goals: ['3', '6', '8'] },
-            { year: '2027', month: 'آذار (مارس)', day: '10', title: 'متابعة التواصل مع الجهات المستهدفة وتطوير العلاقات.', goals: ['3', '6', '8'] },
-            { year: '2027', month: 'آذار (مارس)', day: '11', title: 'اللقاء الأول ل Messengers of Peace رسل السلام في سوريا', goals: ['3', '6', '8'] },
-            { year: '2027', month: 'آذار (مارس)', day: '12 - 13', title: 'التحضير للأنشطة والمبادرات وورشات قبول الآخر وتطوير المناهج الكشفية', goals: ['3', '6', '8'] },
-            { year: '2027', month: 'آذار (مارس)', day: '14', title: 'رزنامة الأنشطة في كل المحافظات', goals: ['1', '3'] },
-            { year: '2027', month: 'آذار (مارس)', day: '15', title: 'اجتماع لجنة التدريب الكشفي في أبرشية الجزيرة (أونلاين)', goals: ['1', '3'] },
-            { year: '2027', month: 'آذار (مارس)', day: '18 - 21', title: 'الدراسة التمهيدية للشارة الخشبية (أبرشية الجزيرة)', goals: ['1'] },
-            { year: '2027', month: 'آذار (مارس)', day: '20', title: 'اليوم الدولي للسعادة (ممكن رسل السلام ينشرون السعادة)', goals: ['1', '3'] },
-            { year: '2027', month: 'آذار (مارس)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1', '2', '8'] },
-            { year: '2027', month: 'آذار (مارس)', day: '30', title: 'عقد اجتماعات تنسيقية مع الجهات.', goals: ['1', '2', '8'] },
-            { year: '2027', month: 'آذار (مارس)', day: '31', title: 'طرح التصميم الأولي و النسخة التجريبية 1.0V للمنصة', goals: ['1', '2', '8'] },
-
-            { year: '2027', month: 'نيسان (أبريل)', day: '1', title: 'التحضير لمبادرة في أسبوع الآلام و الفصح', goals: ['1', '3', '6'] },
-            { year: '2027', month: 'نيسان (أبريل)', day: '7', title: 'يوم الصحة العالمي', goals: ['1', '3', '6'] },
-            { year: '2027', month: 'نيسان (أبريل)', day: '15', title: 'اجتماع لجنة المناهج الكشفية (أونلاين)', goals: ['1', '3', '6'] },
-            { year: '2027', month: 'نيسان (أبريل)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
-            { year: '2027', month: 'نيسان (أبريل)', day: '30', title: 'تقييم النسخة التجريبية الأولى واقتراح التعديلات اللازمة.', goals: ['2', '8'] },
-
-            { year: '2027', month: 'أيار (مايو)', day: '15', title: 'إطلاق النسخة المحدثة 2.0V وتجربتها على نطاق أوسع.', goals: ['2'] },
-            { year: '2027', month: 'أيار (مايو)', day: '20', title: 'لقاء الحوار الثاني للشباب أونلاين', goals: ['3'] },
-            { year: '2027', month: 'أيار (مايو)', day: '28', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
-
-            { year: '2027', month: 'حزيران (يونيو)', day: '1 - 30', title: 'البدء بتنظيم معسكرات الصيف والدورات التدريبية في مختلف الأبرشيات', goals: ['1', '6'] },
-            { year: '2027', month: 'حزيران (يونيو)', day: '15', title: 'اجتماع لجنة المناهج لمتابعة التطبيقات العملية في المخيمات', goals: ['1'] },
-            { year: '2027', month: 'حزيران (يونيو)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
-
-            { year: '2027', month: 'تموز (يوليو)', day: '1 - 31', title: 'مخيمات الأطفال والفرسان والزهرات الكشفية', goals: ['1', '6'] },
-            { year: '2027', month: 'تموز (يوليو)', day: '15', title: 'ورشات العمل الميدانية لقبول الآخر والاندماج المجتمعي', goals: ['6'] },
-            { year: '2027', month: 'تموز (يوليو)', day: '28', title: 'اجتماع تقييمي للمخيمات الصيفية النصفية', goals: ['1'] },
-
-            { year: '2027', month: 'آب (أغسطس)', day: '12', title: 'اليوم العالمي للشباب - فعاليات ومبادرات شبابية في المحافظات', goals: ['3', '6'] },
-            { year: '2027', month: 'آب (أغسطس)', day: '18 - 25', title: 'دراسة الشارة الخشبية الرسمية للقادة', goals: ['1'] },
-
-            { year: '2027', month: 'أيلول (سبتمبر)', day: '15', title: 'اجتماع تقييم أنشطة الصيف والخروج بالتوصيات', goals: ['1', '3'] },
-            { year: '2027', month: 'أيلول (سبتمبر)', day: '21', title: 'اليوم العالمي للسلام - مبادرات رسل السلام', goals: ['3', '6'] },
-
-            { year: '2027', month: 'تشرين الأول (أكتوبر)', day: '5', title: 'التحضير للعام الكشفي الجديد واجتماعات مجالس الأفواج', goals: ['1'] },
-            { year: '2027', month: 'تشرين الثاني (نوفمبر)', day: '15', title: 'ورشة عمل حول التحول الرقمي واستخدام المنصة الجديدة', goals: ['2'] },
-            { year: '2027', month: 'كانون الأول (ديسمبر)', day: '20 - 30', title: 'الأنشطة الاحتفالية والميلادية ومبادرات خدمة المجتمع', goals: ['3', '6', '10'] },
-
-            { year: '2028', month: 'كانون الثاني (يناير)', day: '8', title: 'اعتماد مفاهيم الاندماج ضمن المناهج الكشفية', goals: ['6'] },
-            { year: '2028', month: 'كانون الثاني (يناير)', day: '15', title: 'تطوير مقترحات ومشاريع بحيث تتناسب مع اهدافنا وأولويات الشراكات.', goals: ['8'] },
-            { year: '2028', month: 'كانون الثاني (يناير)', day: '17', title: 'اجتماع لجنة المناهج الكشفية (أونلاين) والانطلاق ب برامج السنة الجديدة', goals: ['1', '6'] },
-            { year: '2028', month: 'كانون الثاني (يناير)', day: '18', title: 'اعتماد دليل الشراكة وتعميمه', goals: ['8'] },
-            { year: '2028', month: 'كانون الثاني (يناير)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
-
-            { year: '2028', month: 'شباط (فبراير)', day: '12', title: 'تدريب القادة على تطبيق الأنشطة الدامجة', goals: ['6'] },
-            { year: '2028', month: 'شباط (فبراير)', day: '14', title: 'اجتماع لجنة التدريب الكشفي (أونلاين) والانطلاق ب وضع برنامج تدريبي للسنة الجديدة', goals: ['1', '8'] },
-            { year: '2028', month: 'شباط (فبراير)', day: '15', title: 'تأمين الموارد المالية اللازمة لتنفيذ البرامج المحددة.', goals: ['8'] },
-            { year: '2028', month: 'شباط (فبراير)', day: '19', title: 'تنويع مصادر الدعم والبحث عن جهات جديدة.', goals: ['8'] },
-            { year: '2028', month: 'شباط (فبراير)', day: '23', title: 'إطلاق برنامج «صديق لكل فوج»', goals: ['9'] },
-            { year: '2028', month: 'شباط (فبراير)', day: '25', title: 'مؤتمر شباب الكشاف (الجوالة)', goals: ['3'] },
-
-            { year: '2028', month: 'آذار (مارس)', day: '1 - 4', title: 'العمل على بنك الخبرات (توثيق صور وفيديو)', goals: ['1', '7'] },
-            { year: '2028', month: 'آذار (مارس)', day: '8', title: 'البدء بالتواصل مع الجهات والتعريف عن الجمعية بعقد اجتماعات.', goals: ['8'] },
-            { year: '2028', month: 'آذار (مارس)', day: '10', title: 'إطلاق مبادرة من الشباب مع ربطها ب رسل السلام', goals: ['3'] },
-            { year: '2028', month: 'آذار (مارس)', day: '11', title: 'لقاء لتبادل التجارب والخبرات', goals: ['3'] },
-            { year: '2028', month: 'آذار (مارس)', day: '14', title: 'توسيع الشراكات المجتمعية', goals: ['8'] },
-            { year: '2028', month: 'آذار (مارس)', day: '16 - 19', title: 'الدراسة التحضيرية للشارة الخشبية (أبرشية الجزيرة)', goals: ['1'] },
-            { year: '2028', month: 'آذار (مارس)', day: '29', title: 'اجتماع موسيقي أونلاين لتوحيد معزوفات', goals: ['1'] },
-
-            { year: '2028', month: 'نيسان (أبريل)', day: '5', title: 'التحضير للأنشطة والاحتفالات الفصحية والمبادرات', goals: ['3', '6'] },
-            { year: '2028', month: 'أيار (مايو)', day: '12', title: 'ورش تدريبية إقليمية للقادة والجوالة', goals: ['1', '3'] },
-            { year: '2028', month: 'حزيران (يونيو)', day: '20 - 30', title: 'افتتاح الموسم المخيمي الصيفي للكشاف السرياني', goals: ['1', '6'] },
-            { year: '2028', month: 'تموز (يوليو)', day: '1 - 31', title: 'المخيمات الفرعية ودورات المهارات الكشفية والموسيقية', goals: ['1'] },
-            { year: '2028', month: 'آب (أغسطس)', day: '15', title: 'لقاء الجوالة السنوي وتكريم القادة المتميزين', goals: ['3', '10'] },
-            { year: '2028', month: 'أيلول (سبتمبر)', day: '25', title: 'اجتماع التقييم السنوي للأنشطة الصيفية', goals: ['1'] },
-            { year: '2028', month: 'تشرين الأول (أكتوبر)', day: '10', title: 'إطلاق الدليل المحدث للمناهج الكشفية والموسيقية', goals: ['1'] },
-            { year: '2028', month: 'تشرين الثاني (نوفمبر)', day: '18', title: 'المنتدى الكشفي الرقمي للشباب', goals: ['2', '3'] },
-            { year: '2028', month: 'كانون الأول (ديسمبر)', day: '25', title: 'حفل التكريم السنوي للداعمين والقادة وأصدقاء الكشاف', goals: ['9', '10'] }
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "", "title": "بناء قاعدة بيانات أولية لشبكة أصدقاء الكشاف السرياني وتشكيل اللجنة التأسيسية +تشكيل لجنة الاندماج المجتمعي", "goals": ["6", "9"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "9", "title": "تحديث قاعدة بيانات أعضاء الجمعية على مستوى سوريا بمساعدة أمانة السر في الأفواج", "goals": ["8"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "10", "title": "لقاء الحوار الأول للشباب (أونلاين) فريقين رسل السلام و قادة الحياة", "goals": ["3"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "15", "title": "الطرح الأولي لخطة المنصة و التصميم", "goals": ["2"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "16", "title": "تشكيل لجنة الاندماج المجتمعي من القادة ذو الخبرة", "goals": ["6"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "18", "title": "اجتماع لجنة المناهج الكشفية (أونلاين)", "goals": ["1"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "28", "title": "إنشاء ملف تعريفي احترافي عن الجمعية يحوي الإنجازات التي قامت بها في السنوات الماضية", "goals": ["8"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "29", "title": "إطلاق فريق تنظيم مبادرات ل Messengers of Peace رسل السلام في سوريا", "goals": ["3"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "30", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "كانون الثاني (يناير)", "day": "31", "title": "عرض نتائج هدف تخصيص فريق الميديا واقتراحات لأي تعديلات", "goals": ["7"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "10", "title": "إطلاق فريق LifeLeaders من سوريا لتنظيم تدريبات ومهارات", "goals": ["3"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "12", "title": "إنشاء قاعدة بيانات للجهات المستهدفة المشابهة لأهدافنا واهتماماتنا وتحديد مجالات التعاون الممكنة معها", "goals": ["8"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "15", "title": "اجتماع لجنة المناهج الكشفية (أونلاين)", "goals": ["1"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "16", "title": "الانتهاء من التعديلات على تصميم المنصة", "goals": ["2"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "22", "title": "احتفالية بعنوان \"في يوم المؤسس\"", "goals": ["3"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "22", "title": "اطلاق قناة التواصل الرقمية الخاصة بشبكة اصدقاء الكشاف السرياني", "goals": ["9"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "26", "title": "البدء بالتواصل مع الجهات والتعريف عن الجمعية بعقد اجتماعات", "goals": ["8"] },
+            { "year": "2027", "month": "شباط (فبراير)", "day": "28", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "8", "title": "اليوم العالمي للمرأة", "goals": ["3"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "10", "title": "متابعة التواصل مع الجهات المستهدفة وتطوير العلاقات", "goals": ["8"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "11", "title": "اللقاء الأول ل Messengers of Peace رسل السلام في سوريا", "goals": ["3"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "12", "title": "اللقاء الأول ل Messengers of Peace رسل السلام في سوريا (تحضير الأنشطة والمبادرات)", "goals": ["3"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "13", "title": "اللقاء الأول ل Messengers of Peace رسل السلام في سوريا (تحضير الأنشطة والمبادرات)", "goals": ["3"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "14", "title": "اللقاء الأول ل Messengers of Peace رسل السلام في سوريا (رزنامة الأنشطة في كل المحافظات)", "goals": ["3"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "12", "title": "ورشات قبول الآخر وتطوير المناهج الكشفية", "goals": ["6"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "13", "title": "ورشات قبول الآخر وتطوير المناهج الكشفية", "goals": ["6"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "15", "title": "اجتماع لجنة التدريب الكشفي في أبرشية الجزيرة (أونلاين)", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "18", "title": "الدراسة التمهيدية للشارة الخشبية (أبرشية الجزيرة)", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "19", "title": "الدراسة التمهيدية للشارة الخشبية (أبرشية الجزيرة)", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "20", "title": "الدراسة التمهيدية للشارة الخشبية (أبرشية الجزيرة)", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "21", "title": "الدراسة التمهيدية للشارة الخشبية (أبرشية الجزيرة)", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "20", "title": "اليوم الدولي للسعادة", "goals": ["3"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "30", "title": "عقد اجتماعات تنسيقية مع الجهات المستهدفة لبناء الشراكات", "goals": ["8"] },
+            { "year": "2027", "month": "آذار (مارس)", "day": "31", "title": "طرح التصميم الأولي و النسخة التجريبية 1.0V", "goals": ["2"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "2", "title": "TEDx Scout", "goals": ["3"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "3", "title": "إطلاق حملة «أصدقاء الكشاف… حكاية مستمرة»\nاللقاء الإلكتروني التعريفي الأول", "goals": ["9"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "4", "title": "تطوير أنشطة كشفية دامجة", "goals": ["6"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "6", "title": "يوم الرياضة من أجل التنمية والسلام", "goals": ["3"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "7", "title": "يوم الصحة العالمي", "goals": ["3"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "8", "title": "إطلاق مبادرة \"مكانك بيناتنا\"", "goals": ["6"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "9", "title": "TEDx Scout", "goals": ["3"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "14", "title": "عقد اجتماعات تنسيقية مع الجهات المستهدفة لبناء الشراكات", "goals": ["8"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "16", "title": "TEDx Scout", "goals": ["3"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "18", "title": "تدريب القادة على الأنشطة الدامجة", "goals": ["6"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "19", "title": "اجتماع لجنة المناهج الكشفية (أونلاين) عرض النسخة الأولية من المنهاج الموحد", "goals": ["1"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "23", "title": "TEDx Scout", "goals": ["3"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "24", "title": "إعداد خارطة بالخدمات التي تقدمها الجهات المستهدفة", "goals": ["8"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "نيسان (أبريل)", "day": "30", "title": "انتهاء تجربة النسخة الأولية للمنصة و طرح التعديلات للتنفيذ و تشكيل لجنة كشفية متخصصة بالمنصة", "goals": ["2"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "5", "title": "تحديد نقاط التقاطع وفرص العمل مع كل جهة", "goals": ["8"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "10", "title": "اجتماع لجنة التدريب الكشفي في أبرشية حمص وحلب ودمشق (أونلاين)", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "13", "title": "مخيم للشباب بقيادة فريق LifeLeaders", "goals": ["3"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "14", "title": "مخيم للشباب بقيادة فريق LifeLeaders (تدريبات مهارات حياة)", "goals": ["3"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "15", "title": "مخيم للشباب بقيادة فريق LifeLeaders (تدريبات مهارات حياة)", "goals": ["3"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "16", "title": "مخيم للشباب بقيادة فريق LifeLeaders (تدريبات مهارات حياة)", "goals": ["3"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "17", "title": "مخيم للشباب بقيادة فريق LifeLeaders (تدريبات مهارات حياة)", "goals": ["3"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "14", "title": "نشر قصص وذكريات الأصدقاء", "goals": ["9"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "15", "title": "نشر قصص وذكريات الأصدقاء", "goals": ["9"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "16", "title": "نشر قصص وذكريات الأصدقاء", "goals": ["9"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "16", "title": "اليوم الدولي للعيش معاً بسلام", "goals": ["3"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "17", "title": "دورة مبتدىء لأفواج حمص + حلب +دمشق", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "18", "title": "دورة مبتدىء لأفواج حمص + حلب +دمشق", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "19", "title": "دورة مبتدىء لأفواج حمص + حلب +دمشق", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "20", "title": "دورة مبتدىء لأفواج حمص + حلب +دمشق", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "21", "title": "TOT موسيقي التدريب الثاني للجنة", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "22", "title": "TOT موسيقي التدريب الثاني للجنة", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "23", "title": "TOT موسيقي التدريب الثاني للجنة", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "24", "title": "TOT موسيقي التدريب الثاني للجنة", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "25", "title": "تنفيذ التعديلات و طرح نسخة تجريبية اونلاين", "goals": ["2"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "25", "title": "الدراسة التمهيدية للشارة الخشبية  (أبرشية حمص + حلب + دمشق)", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "26", "title": "الدراسة التمهيدية للشارة الخشبية  (أبرشية حمص + حلب + دمشق)", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "28", "title": "الدراسة التمهيدية للشارة الخشبية  (أبرشية حمص + حلب + دمشق)", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "29", "title": "الدراسة التمهيدية للشارة الخشبية  (أبرشية حمص + حلب + دمشق)", "goals": ["1"] },
+            { "year": "2027", "month": "أيار (مايو)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "1", "title": "إعداد عروض تعاون تتناسب مع اهتمامات الجهات الشريكة", "goals": ["8"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "5", "title": "اليوم العالمي للبيئة (مبادرة في بيث سبرو )", "goals": ["3"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "11", "title": "المخيم العام للجراميز والزهرات", "goals": ["3"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "12", "title": "المخيم العام للجراميز والزهرات", "goals": ["3"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "13", "title": "المخيم العام للجراميز والزهرات", "goals": ["3"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "21", "title": "إطلاق الفريق التدريبي الكشفي الخاص بالجمعية", "goals": ["1"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "23", "title": "يوم الأمم المتحدة للخدمة العامة", "goals": ["3"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "24", "title": "تقديم مشاريع وبرامج قابلة للتنفيذ مع الجهات الشريكة", "goals": ["8"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "28", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "29", "title": "جمع الأقتراحات بعد التجربة من قبل المستخدمين", "goals": ["2"] },
+            { "year": "2027", "month": "حزيران (يونيو)", "day": "30", "title": "اقتراح مسودة الإجراءات الخاصة بفريق الميديا والتعليمات الخاصة بالكشاف السرياني السوري", "goals": ["7"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "2", "title": "توسيع شبكة العلاقات والاستفادة من الفرص المؤسسية", "goals": ["8"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "9", "title": "المخيم العام للكشافين والمرشدات", "goals": ["3"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "10", "title": "المخيم العام للكشافين والمرشدات", "goals": ["3"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "11", "title": "المخيم العام للكشافين والمرشدات", "goals": ["3"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "12", "title": "المخيم العام للكشافين والمرشدات", "goals": ["3"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "15", "title": "اليوم العالمي لمهارات الشباب", "goals": ["3"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "19", "title": "اجتماع لجنة المناهج الكشفية (أونلاين) عرض النسخة المدققة من المنهاج الموحد", "goals": ["1"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "21", "title": "طرح النسخة العامة من المنصة و يدء بتسجيل المستخدمين و بدء العمل على مرحلة التطوير", "goals": ["2"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "23", "title": "دعم الشباب بالتدريبات اللازمة بالتنسيق مع الشراكات التي تم التعاقد معها", "goals": ["8"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "تموز (يوليو)", "day": "30", "title": "إجراء التعديلات الضرورية لمسودة التوصيات والإجراءات الخاصة بفريق الميديا", "goals": ["7"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "1", "title": "يوم المنديل الكشفي \" تجمع فولارك هويتك\" يوم أنشطة وتحديات كشفية في حمص", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "6", "title": "تحديث الملف التعريفي الخاص بالجمعية الذي يحوي الإنجازات التي قامت بها حتى منتصف السنة", "goals": ["8"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "12", "title": "دراسة إعداد قادة خاص بالفريق التدريبي الكشفي", "goals": ["1"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "13", "title": "دراسة إعداد قادة خاص بالفريق التدريبي الكشفي", "goals": ["1"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "14", "title": "دراسة إعداد قادة خاص بالفريق التدريبي الكشفي", "goals": ["1"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "20", "title": "اللقاء السنوي الأول لأصدقاء الكشاف", "goals": ["9"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "21", "title": "المخيم السنوي العام", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "22", "title": "المخيم السنوي العام", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "23", "title": "المخيم السنوي العام", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "24", "title": "المخيم السنوي العام", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "25", "title": "المخيم السنوي العام", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "26", "title": "المخيم السنوي العام", "goals": ["3"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "26", "title": "لقاءات مع المراكز والجمعيات المعنية", "goals": ["6"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "27", "title": "لقاءات مع المراكز والجمعيات المعنية\nمبادرة خدمة مجتمعية «إيد بإيد»", "goals": ["6"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "آب (أغسطس)", "day": "31", "title": "دعم الشباب (بالتوصية والتنسيق) مع الشراكات التي تم التعاقد معها بالحصول على فرص عمل", "goals": ["8"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "1", "title": "تدريب كيفية تصميم المبادرات المجتمعية (أونلاين)", "goals": ["3"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "3", "title": "عزف موسيقي مشترك", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "4", "title": "عزف موسيقي مشترك", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "5", "title": "عزف موسيقي مشترك", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "9", "title": "تدريب كيفية تصميم المبادرات المجتمعية (أونلاين)", "goals": ["3"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "10", "title": "متابعة التواصل مع الجهات الشريكة", "goals": ["8"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "11", "title": "إطلاق مبادرة «خبرتي بخدمة كشافنا»", "goals": ["9"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "15", "title": "دورة مبتدىء لأفواج الجزيرة", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "16", "title": "دورة مبتدىء لأفواج الجزيرة", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "17", "title": "دورة مبتدىء لأفواج الجزيرة", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "18", "title": "دورة مبتدىء لأفواج الجزيرة", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "20", "title": "تحديد مبادرة مجتمعية  من كل جوالة سوريا كل من بمحافظته بمناسبة اليوم العالمي للتطوع", "goals": ["3"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "21", "title": "اليوم الدولي للسلام (لقاء رسل السلام)", "goals": ["3"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "24", "title": "تطوير المناهج الكشفية الدامجة", "goals": ["6"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "25", "title": "تطوير المناهج الكشفية الدامجة", "goals": ["6"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "أيلول (سبتمبر)", "day": "30", "title": "الملف النهائي للتوصيات والاجراءات الخاصة بفريق الميديا بعد التعديلات والموافقة عليه", "goals": ["7"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "8", "title": "المخيم العام للجوالة", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "9", "title": "المخيم العام للجوالة", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "10", "title": "المخيم العام للجوالة", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "11", "title": "المخيم العام للجوالة", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "12", "title": "المخيم العام للجوالة", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "20", "title": "إطلاق المنصة بشكل رسمي خلال اجتماع الهيئة العامة", "goals": ["2"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "22", "title": "تنفيذ مبادرة كشفية مشتركة", "goals": ["6"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "23", "title": "اجتماع لجنة المناهج الكشفية - إطلاق النسخة الموحدة من المنهاج", "goals": ["1"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "24", "title": "اجتماع لجنة المناهج الكشفية - إطلاق النسخة الموحدة من المنهاج", "goals": ["1"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "25", "title": "اجتماع لجنة المناهج الكشفية - إطلاق النسخة الموحدة من المنهاج", "goals": ["1"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "28", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "29", "title": "لقاء فريق الميديا للعمل على التوصيات والإجراءات الجديدة", "goals": ["7"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "30", "title": "إنشاء بنك الخبرات ( توثيق الخبرات عند القادة القدامى)", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الأول (أكتوبر)", "day": "31", "title": "تحديث قاعدة بيانات أعضاء الجمعية على مستوى سوريا بمساعدة أمانة السر في الأفواج", "goals": ["8"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "1", "title": "العمل على جمع بنك الخبرات", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "2", "title": "العمل على جمع بنك الخبرات", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "3", "title": "العمل على جمع بنك الخبرات", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "4", "title": "العمل على جمع بنك الخبرات", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "5", "title": "العمل على جمع بنك الخبرات", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "8", "title": "تنفيذ أنشطة مشتركة مع الفئات المتنوعة", "goals": ["6"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "11", "title": "جلسات الاستشارة الكشفية", "goals": ["6"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "12", "title": "جلسات الاستشارة الكشفية", "goals": ["6"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "13", "title": "جلسات الاستشارة الكشفية", "goals": ["6"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "20", "title": "اليوم العالمي للطفل", "goals": ["3"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "26", "title": "تحديث قاعدة بيانات للجهات المشابهة لأهدافنا", "goals": ["8"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "27", "title": "إعداد دليل الشراكة مع الأصدقاء", "goals": ["9"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "29", "title": "اجتماع موسيقي أونلاين لتوحيد معزوفات", "goals": ["1"] },
+            { "year": "2027", "month": "تشرين الثاني (نوفمبر)", "day": "30", "title": "إطلاق بنك الخبرات ( توثيق الخبرات عند القادة القدامى)", "goals": ["3"] },
+            { "year": "2027", "month": "كانون الأول (ديسمبر)", "day": "5", "title": "مبادرة مجتمعية من كل جوالة سوريا كل من بمحافظته بمناسبة اليوم العالمي للتطوع", "goals": ["3"] },
+            { "year": "2027", "month": "كانون الأول (ديسمبر)", "day": "10", "title": "تقييم أثر المبادرات", "goals": ["6"] },
+            { "year": "2027", "month": "كانون الأول (ديسمبر)", "day": "12", "title": "تطوير قنوات التواصل وتقييم المرحلة الأولى", "goals": ["9"] }
         ];
 
         let currentYear = '2027';
@@ -1292,6 +1626,18 @@
             document.getElementById('goalFilter').value = goalId;
             applyFilters();
             document.getElementById('monthsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function toggleVmvSection() {
+            const body = document.getElementById('vmvBody');
+            const icon = document.getElementById('vmvChevron');
+            if (body.style.display === 'none') {
+                body.style.display = 'block';
+                icon.className = 'fas fa-chevron-up text-muted';
+            } else {
+                body.style.display = 'none';
+                icon.className = 'fas fa-chevron-down text-muted';
+            }
         }
 
         function toggleStrategicGuide() {
@@ -1455,8 +1801,11 @@
                     `;
                 } else {
                     list.forEach(ev => {
-                        const dayString = ev.day ? ev.day : 'خلال الشهر';
                         const isSpecificDay = Boolean(ev.day);
+                        const isRange = isSpecificDay && String(ev.day).includes('-');
+                        const dayDisplay = isSpecificDay ? ev.day : 'طيلة الشهر';
+                        const subDisplay = isSpecificDay ? 'اليوم المحدد' : 'نشاط ممتد';
+                        const numClass = isSpecificDay ? (isRange ? 'range-num' : '') : 'text-num';
 
                         const badgesHtml = ev.goals.map(g => {
                             const goalData = GOALS_MAP[g] || { title: `هدف ${g}`, class: 'gt-1', icon: 'fa-check' };
@@ -1470,14 +1819,13 @@
 
                         outputHtml += `
                             <div class="scout-event-item">
-                                <!-- خانة التاريخ بمحاذاة ثابتة -->
-                                <div class="event-day-box" title="${isSpecificDay ? 'تاريخ النشاط' : 'ممتد خلال الشهر'}">
-                                    <span class="event-day-badge">
-                                        <i class="${isSpecificDay ? 'fas fa-calendar-alt' : 'far fa-clock'} me-1"></i>${dayString}
-                                    </span>
-                                    <span class="event-day-sub">
-                                        ${isSpecificDay ? 'اليوم المجدول' : 'طيلة الشهر'}
-                                    </span>
+                                <!-- بطاقة تاريخ الفعالية المحسنة مع مسافات مريحة وتناسق بصري -->
+                                <div class="event-day-box ${isSpecificDay ? '' : 'is-month-wide'}" title="${isSpecificDay ? 'تاريخ النشاط: ' + dayDisplay : 'نشاط ممتد على مدار الشهر'}">
+                                    <div class="event-day-icon">
+                                        <i class="${isSpecificDay ? 'fas fa-calendar-alt' : 'far fa-clock'}"></i>
+                                    </div>
+                                    <div class="event-day-num ${numClass}">${dayDisplay}</div>
+                                    <div class="event-day-sub">${subDisplay}</div>
                                 </div>
 
                                 <!-- محتوى وتفاصيل النشاط والوسوم الاستراتيجية -->
