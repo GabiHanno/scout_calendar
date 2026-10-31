@@ -57,7 +57,7 @@
             background: linear-gradient(135deg, var(--scout-maroon-deep) 0%, var(--scout-maroon-dark) 45%, var(--scout-maroon) 85%, #6a1017 100%);
             color: #ffffff;
             position: relative;
-            padding: 2.8rem 1rem 3.5rem;
+            padding: 1.8rem 1rem 1rem;
             border-bottom: 4px solid var(--scout-gold);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
             overflow: hidden;
@@ -125,45 +125,12 @@
             font-weight: 600;
             opacity: 0.95;
             max-width: 750px;
-            margin: 0 auto 1.25rem;
+            margin: 0 auto;
         }
 
-        .header-stats-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header-pill {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            color: #ffffff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-pill i {
-            color: var(--scout-gold-light);
-        }
-
-        .filter-panel {
-            background: var(--scout-card-bg);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            margin-top: -36px;
+        .vmv-card {
             position: relative;
             z-index: 10;
-            box-shadow: 0 12px 32px rgba(90, 12, 19, 0.08);
-            border: 1px solid var(--scout-border);
         }
 
         .year-selector-group {
@@ -237,6 +204,58 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .merged-toolbar {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            padding: 16px 18px;
+        }
+
+        .toolbar-filters-row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto minmax(260px, 1.4fr) minmax(220px, 1fr);
+            gap: 12px 18px;
+            align-items: end;
+            padding-bottom: 16px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--scout-border-subtle);
+        }
+
+        .toolbar-filter-item {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .toolbar-filter-item .year-selector-group {
+            width: 100%;
+            min-width: 170px;
+            height: 38px;
+            padding: 3px;
+        }
+
+        .toolbar-filter-item .year-selector-group .year-btn {
+            padding: 4px 8px;
+            font-size: 0.9rem;
+        }
+
+        .toolbar-filter-goal .form-select,
+        .toolbar-filter-search .form-control {
+            width: 100%;
+        }
+
+        .toolbar-controls-row {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+            justify-content: space-between;
         }
 
         .btn-scout-action {
@@ -884,82 +903,7 @@
             box-shadow: 0 0 0 2px var(--scout-gold);
         }
 
-        .month-quicknav-bar {
-            background: #ffffff;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--scout-border);
-            padding: 12px 16px;
-            box-shadow: var(--shadow-subtle);
-        }
 
-        .month-quicknav-title {
-            font-size: 0.85rem;
-            font-weight: 800;
-            color: var(--scout-maroon);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .month-quicknav-scroll {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 6px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--scout-maroon) var(--scout-cream-bg);
-        }
-
-        .month-quicknav-scroll::-webkit-scrollbar {
-            height: 5px;
-        }
-
-        .month-quicknav-scroll::-webkit-scrollbar-thumb {
-            background: var(--scout-maroon);
-            border-radius: 10px;
-        }
-
-        .quicknav-pill {
-            background: var(--scout-cream-bg);
-            border: 1px solid var(--scout-border);
-            color: var(--scout-maroon-dark);
-            border-radius: 20px;
-            padding: 5px 13px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            white-space: nowrap;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .quicknav-pill:hover,
-        .quicknav-pill.active {
-            background: var(--scout-maroon);
-            color: #ffffff;
-            border-color: var(--scout-maroon);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(130, 21, 29, 0.25);
-        }
-
-        .quicknav-pill .pill-badge {
-            background: rgba(130, 21, 29, 0.12);
-            color: var(--scout-maroon);
-            border-radius: 10px;
-            padding: 1px 7px;
-            font-size: 0.72rem;
-            font-weight: 800;
-        }
-
-        .quicknav-pill:hover .pill-badge,
-        .quicknav-pill.active .pill-badge {
-            background: #ffffff;
-            color: var(--scout-maroon);
-        }
 
         @media (max-width: 991px) {
             .toolbar-actions {
@@ -967,6 +911,15 @@
                 align-items: stretch;
                 gap: 14px;
                 padding: 14px;
+            }
+
+            .toolbar-filters-row {
+                grid-template-columns: 1fr;
+            }
+
+            .toolbar-controls-row {
+                flex-direction: column;
+                align-items: stretch;
             }
 
             .toolbar-group {
@@ -1006,11 +959,6 @@
             .logo-container {
                 width: 95px;
                 height: 95px;
-            }
-
-            .filter-panel {
-                padding: 16px;
-                margin-top: -24px;
             }
 
             .scout-event-item {
@@ -1066,6 +1014,705 @@
                 font-size: 0.8rem;
             }
         }
+
+
+        .scout-dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .scout-stat-card {
+            background: #ffffff;
+            border: 1px solid var(--scout-border);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(90, 12, 19, 0.04);
+            text-align: right;
+            user-select: none;
+            border-right: 3px solid transparent;
+        }
+
+        .scout-stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--scout-gold);
+            box-shadow: 0 6px 16px rgba(90, 12, 19, 0.09);
+        }
+
+        .scout-stat-card.active {
+            border-color: var(--scout-maroon);
+            border-right-color: var(--scout-maroon);
+            background: #fdf8f8;
+            box-shadow: 0 3px 10px rgba(130, 21, 29, 0.12);
+        }
+
+        .stat-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .stat-icon-wrap {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .stat-icon-all { background: #fbecee; color: var(--scout-maroon); }
+        .stat-icon-month { background: #fef7e6; color: #b45309; }
+        .stat-icon-specific { background: #ecfdf5; color: #047857; }
+        .stat-icon-monthwide { background: #eff6ff; color: #1d4ed8; }
+        .stat-icon-online { background: #fdf2f8; color: #be185d; }
+        .stat-icon-goals { background: #f3e8ff; color: #7e22ce; }
+
+        .stat-arrow-icon {
+            display: none;
+        }
+
+        .scout-stat-card:hover .stat-arrow-icon {
+            color: var(--scout-maroon);
+        }
+
+        .stat-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .stat-number-val {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--scout-maroon-deep);
+            line-height: 1.1;
+            font-family: inherit;
+        }
+
+        .stat-label-text {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--scout-text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 2. رسم وتوزيع أنشطة الأشهر البياني */
+        .monthly-overview-card {
+            background: linear-gradient(180deg, #ffffff 70%, #fdfbfa 100%);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--scout-border);
+            padding: 20px 24px 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(90, 12, 19, 0.05);
+            position: relative;
+        }
+
+        .overview-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--scout-border-subtle);
+        }
+
+        .overview-title-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .overview-icon-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: var(--scout-gold-soft);
+            color: var(--scout-gold);
+            border: 1px solid rgba(198, 146, 34, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            box-shadow: 0 2px 6px rgba(198, 146, 34, 0.1);
+        }
+
+        .overview-title-text h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--scout-maroon-deep);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .overview-title-text small {
+            font-size: 0.82rem;
+            color: var(--scout-text-muted);
+            font-weight: 600;
+        }
+
+        .overview-badges-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .overview-rate-badge {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .overview-year-badge {
+            background: var(--scout-maroon-subtle);
+            color: var(--scout-maroon);
+            border: 1px solid rgba(130, 21, 29, 0.2);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .monthly-bars-container {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 18px;
+            align-items: end;
+        }
+
+        .month-bar-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 10px 10px 8px 8px;
+            padding: 8px 4px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+            width: 100%;
+            user-select: none;
+        }
+
+        .month-bar-btn:hover {
+            background: #fdfaf4;
+            border-color: rgba(198, 146, 34, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .month-bar-btn.selected {
+            background: #faf0f1;
+            border-color: rgba(130, 21, 29, 0.35);
+            box-shadow: 0 4px 14px rgba(130, 21, 29, 0.12);
+        }
+
+        .month-bar-count {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #9b7b3f;
+            line-height: 1;
+        }
+
+        .month-bar-btn.selected .month-bar-count {
+            color: var(--scout-maroon-deep);
+            font-size: 1.05rem;
+        }
+
+        .month-bar-track {
+            height: 76px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            border-bottom: 2px solid var(--scout-border-subtle);
+            background: repeating-linear-gradient(to top, transparent 0, transparent 23px, rgba(0, 0, 0, 0.03) 23px, rgba(0, 0, 0, 0.03) 24px);
+        }
+
+        .month-bar-fill {
+            width: 58%;
+            max-width: 30px;
+            min-width: 12px;
+            background: linear-gradient(180deg, #e5b342 0%, #c69222 100%);
+            border-radius: 5px 5px 0 0;
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .month-bar-btn:hover .month-bar-fill {
+            filter: brightness(0.94);
+        }
+
+        .month-bar-btn.selected .month-bar-fill {
+            background: linear-gradient(180deg, var(--scout-maroon-light) 0%, var(--scout-maroon-deep) 100%);
+            box-shadow: 0 -2px 6px rgba(130, 21, 29, 0.3);
+        }
+
+        .month-bar-label {
+            font-size: 0.76rem;
+            color: var(--scout-text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .month-bar-btn.selected .month-bar-label {
+            color: var(--scout-maroon-deep);
+            font-weight: 800;
+        }
+
+        .month-swipe-hint {
+            display: none;
+            color: var(--scout-gold-dark, #a08347);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+
+        .scout-calendar-section {
+            display: block;
+            width: 100%;
+            margin-bottom: 30px;
+            animation: fadeInCalendar 0.3s ease-out forwards;
+        }
+
+        @keyframes fadeInCalendar {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calendar-nav-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            background: #ffffff;
+            border: 1px solid var(--scout-border);
+            border-radius: var(--radius-md);
+            padding: 12px 18px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-subtle);
+            flex-wrap: wrap;
+        }
+
+        .calendar-nav-btn {
+            background: #ffffff;
+            border: 1.5px solid var(--scout-border);
+            color: var(--scout-maroon);
+            border-radius: 10px;
+            padding: 8px 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .calendar-nav-btn:hover:not(:disabled) {
+            background: var(--scout-maroon);
+            color: #ffffff;
+            border-color: var(--scout-maroon);
+            transform: translateY(-1px);
+        }
+
+        .calendar-nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #f8f6f4;
+        }
+
+        .calendar-month-header-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .calendar-current-month-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--scout-maroon-deep);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .calendar-month-badge {
+            background: var(--scout-maroon-subtle);
+            color: var(--scout-maroon);
+            border: 1px solid rgba(130, 21, 29, 0.2);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .calendar-month-select {
+            border-radius: 9px;
+            font-weight: 700;
+            border: 1px solid var(--scout-border);
+            font-size: 0.88rem;
+            padding: 6px 12px;
+            color: var(--scout-maroon-deep);
+            background-color: #fdfbf8;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .calendar-month-select:focus {
+            border-color: var(--scout-gold);
+            box-shadow: 0 0 0 3px rgba(198, 146, 34, 0.25);
+        }
+
+        .calendar-scroll-wrap {
+            background: #ffffff;
+            border: 1px solid var(--scout-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-subtle);
+            overflow-x: auto;
+            margin-bottom: 16px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scout-gold) #f7f3ed;
+        }
+
+        .scout-calendar-grid {
+            min-width: 860px;
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 1px;
+            background: var(--scout-border);
+        }
+
+        .scout-calendar-dow {
+            background: #fdfbf8;
+            color: var(--scout-maroon-deep);
+            font-weight: 800;
+            font-size: 0.88rem;
+            padding: 12px 6px;
+            text-align: center;
+            border-bottom: 2px solid var(--scout-border);
+        }
+
+        .scout-calendar-dow.weekend {
+            background: #faf4e8;
+            color: #92400e;
+            border-bottom-color: var(--scout-gold);
+        }
+
+        .scout-calendar-cell {
+            background: #ffffff;
+            min-height: 145px;
+            height: auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: background 0.15s ease;
+        }
+
+        .scout-calendar-cell.weekend {
+            background: #fdfcf9;
+        }
+
+        .scout-calendar-cell.blank {
+            background: repeating-linear-gradient(-45deg, #fcfbfa, #fcfbfa 6px, #f6f3f0 6px, #f6f3f0 12px);
+            pointer-events: none;
+        }
+
+        .scout-calendar-cell:hover:not(.blank) {
+            background: #fffdf8;
+        }
+
+        .cell-day-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            min-height: 25px;
+        }
+
+        .cell-day-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: #f7f3f1;
+            color: var(--scout-maroon-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            border: 1px solid var(--scout-border-subtle);
+        }
+
+        .scout-calendar-cell.weekend .cell-day-num {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+
+        .cell-day-count-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--scout-text-muted);
+        }
+
+        .cell-events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 1;
+        }
+
+        .cal-event-chip {
+            display: block;
+            width: 100%;
+            text-align: right;
+            border: none;
+            border-radius: 6px;
+            padding: 5px 8px;
+            font-size: 0.77rem;
+            line-height: 1.4;
+            font-weight: 600;
+            transition: all 0.18s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            font-family: inherit;
+        }
+
+        .cal-event-chip:hover {
+            filter: brightness(0.94);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+     
+        .cal-goal-1  { background: #fbecee !important; color: #82151d !important; border-right: 3px solid #82151d !important; }
+        .cal-goal-2  { background: #ebf5ff !important; color: #1e429f !important; border-right: 3px solid #1a56db !important; }
+        .cal-goal-3  { background: #ecfdf5 !important; color: #047857 !important; border-right: 3px solid #047857 !important; }
+        .cal-goal-4  { background: #f3e8ff !important; color: #6b21a8 !important; border-right: 3px solid #6b21a8 !important; }
+        .cal-goal-5  { background: #f0fdfa !important; color: #0f766e !important; border-right: 3px solid #0d9488 !important; }
+        .cal-goal-6  { background: #fff7ed !important; color: #c2410c !important; border-right: 3px solid #c2410c !important; }
+        .cal-goal-7  { background: #f0f9ff !important; color: #0369a1 !important; border-right: 3px solid #0284c7 !important; }
+        .cal-goal-8  { background: #eff6ff !important; color: #1e3a8a !important; border-right: 3px solid #1e3a8a !important; }
+        .cal-goal-9  { background: #fef3c7 !important; color: #92400e !important; border-right: 3px solid #92400e !important; }
+        .cal-goal-10 { background: #fdf4e6 !important; color: #b45309 !important; border-right: 3px solid #b45309 !important; }
+
+        .cell-more-btn {
+            background: transparent;
+            border: none;
+            color: var(--scout-maroon);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 6px;
+            margin-top: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: right;
+            transition: background 0.15s ease;
+            width: fit-content;
+        }
+
+        .cell-more-btn:hover {
+            background: var(--scout-maroon-subtle);
+        }
+
+        /* الأنشطة الممتدة طيلة الشهر أسفل التقويم */
+        .month-long-event-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            background: #ffffff;
+            border: 1px solid var(--scout-border);
+            border-right: 4px solid var(--scout-gold);
+            border-radius: var(--radius-md);
+            padding: 12px 18px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: right;
+            width: 100%;
+        }
+
+        .month-long-event-card:hover {
+            transform: translateX(-3px);
+            box-shadow: 0 4px 14px rgba(90, 12, 19, 0.08);
+            border-right-color: var(--scout-maroon);
+        }
+
+        .month-long-badge {
+            background: var(--scout-gold-soft);
+            color: #92400e;
+            border: 1px solid rgba(198, 146, 34, 0.3);
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .month-long-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--scout-text-main);
+            flex: 1;
+        }
+
+        .month-long-action {
+            color: var(--scout-maroon);
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .calendar-goals-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            padding: 14px 18px;
+            background: #ffffff;
+            border: 1px solid var(--scout-border);
+            border-radius: var(--radius-md);
+            margin-top: 16px;
+            align-items: center;
+        }
+
+        .legend-title {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--scout-maroon);
+            margin-left: 6px;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--scout-text-muted);
+            cursor: default;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* استجابة الشاشات الصغيرة للمكونات الجديدة */
+        @media (max-width: 992px) {
+            .scout-dashboard-stats {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scout-dashboard-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .scout-stat-card {
+                padding: 11px 12px;
+            }
+
+            .stat-number-val {
+                font-size: 1.45rem;
+            }
+
+            .monthly-overview-card {
+                padding: 14px 16px 12px;
+            }
+
+            .monthly-bars-container {
+                grid-template-columns: repeat(12, minmax(52px, 1fr));
+                overflow-x: auto;
+                padding-bottom: 8px;
+                scroll-snap-type: x proximity;
+            }
+
+            .month-bar-btn {
+                scroll-snap-align: start;
+            }
+
+            .month-swipe-hint {
+                display: block;
+            }
+
+            .month-bar-track {
+                height: 52px;
+            }
+
+            .calendar-nav-toolbar {
+                padding: 10px 12px;
+                gap: 8px;
+            }
+
+            .calendar-current-month-title {
+                font-size: 1.1rem;
+            }
+
+            .scout-calendar-cell {
+                min-height: 135px;
+                padding: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scout-dashboard-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .stat-label-text {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
@@ -1089,124 +1736,11 @@
                 الرزنامة السنوية الكاملة وخطة العمل الاستراتيجية والتنفيذية
             </p>
 
-            <div class="header-stats-row">
-                <span class="header-pill" id="activeYearPill">
-                    <i class="fas fa-calendar-star"></i>
-                    السنة الكشفية: <strong id="activeYearText">2027</strong>
-                </span>
-                <span class="header-pill" id="totalActivitiesPill">
-                    <i class="fas fa-tasks"></i>
-                    إجمالي الأنشطة: <strong id="totalCountNumber">--</strong> نشاطاً
-                </span>
-                <span class="header-pill">
-                    <i class="fas fa-bullseye"></i>
-                    10 أهداف استراتيجية معتمدة
-                </span>
-                <span class="header-pill">
-                    <i class="fas fa-layer-group"></i>
-                    12 شهراً مبرمجاً
-                </span>
-            </div>
         </div>
     </header>
 
     <main class="container my-4">
-        <section class="filter-panel mb-4">
-            <div class="row g-3 align-items-center">
-                <div class="col-lg-3 col-md-4">
-                    <label class="form-label fw-bold small text-muted mb-1">
-                        <i class="fas fa-calendar-alt text-danger me-1"></i> اختر السنة الكشفية:
-                    </label>
-                    <div class="year-selector-group">
-                        <button type="button" class="year-btn active" id="btnYear2027" onclick="filterYear('2027')">
-                            <i class="fas fa-check-circle"></i> 2027
-                        </button>
-                        <button type="button" class="year-btn" id="btnYear2028" onclick="filterYear('2028')">
-                            <i class="far fa-circle"></i> 2028
-                        </button>
-                    </div>
-                </div>
-
-                <div class="col-lg-5 col-md-8">
-                    <label class="form-label fw-bold small text-muted mb-1">
-                        <i class="fas fa-bullseye text-warning me-1"></i> الهدف الاستراتيجي المرجعي:
-                    </label>
-                    <select id="goalFilter" class="form-select form-select-md border-secondary-subtle fw-semibold"
-                        onchange="applyFilters()">
-                        <option value="ALL">جميع الأهداف الاستراتيجية (10 أهداف)</option>
-                        <option value="1">1. تأسيس أكاديمية التدريب (كشفية - موسيقية)</option>
-                        <option value="2">2. منصة تقنية إلكترونية للتحول الرقمي</option>
-                        <option value="3">3. تبادل الخبرات ولقاءات الشباب</option>
-                        <option value="4">4. تطوير دستور الجمعية</option>
-                        <option value="5">5. العالم المستدام والحماية من الأذى</option>
-                        <option value="6">6. الاندماج المجتمعي وقبول الآخر</option>
-                        <option value="7">7. منظومة إعلامية عالية الجودة</option>
-                        <option value="8">8. الشراكات الاستراتيجية والتمويل</option>
-                        <option value="9">9. تأسيس شبكة أصدقاء الكشاف السرياني</option>
-                        <option value="10">10. تقدير التطوع وتكريم القادة</option>
-                    </select>
-                </div>
-
-                <div class="col-lg-4 col-md-12">
-                    <label class="form-label fw-bold small text-muted mb-1">
-                        <i class="fas fa-search text-primary me-1"></i> بحث سريع في الأنشطة:
-                    </label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white border-secondary-subtle">
-                            <i class="fas fa-search text-muted"></i>
-                        </span>
-                        <input type="text" id="searchInput" class="form-control border-secondary-subtle"
-                            placeholder="ابحث باسم النشاط..." oninput="applyFilters()">
-                        <button class="btn btn-outline-secondary" type="button" onclick="clearSearch()"
-                            title="مسح البحث">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="toolbar-actions">
-            <div class="toolbar-group month-controls-group">
-                <span class="toolbar-label">
-                    <i class="fas fa-sliders-h text-danger"></i>
-                    <span>التحكم بالأشهر:</span>
-                </span>
-                <div class="month-btn-pair">
-                    <button type="button" class="btn-scout-action" onclick="expandAllMonths()"
-                        title="فتح كافة بطاقات الأشهر">
-                        <i class="fas fa-angle-double-down"></i>
-                        <span>فتح جميع الأشهر</span>
-                    </button>
-                    <button type="button" class="btn-scout-action" onclick="collapseAllMonths()"
-                        title="طي كافة بطاقات الأشهر">
-                        <i class="fas fa-angle-double-up"></i>
-                        <span>طي جميع الأشهر</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="toolbar-group view-controls-group">
-                <span class="toolbar-label">
-                    <i class="fas fa-th-large text-warning"></i>
-                    <span>نمط العرض:</span>
-                </span>
-                <div class="view-btn-pair">
-                    <button type="button" class="btn-scout-action active-view" id="btnGridView"
-                        onclick="setViewMode('grid')" title="عرض شبكي متناسق">
-                        <i class="fas fa-th"></i>
-                        <span>شبكة بطاقات</span>
-                    </button>
-                    <button type="button" class="btn-scout-action" id="btnListView" onclick="setViewMode('list')"
-                        title="عرض كقائمة متسلسلة">
-                        <i class="fas fa-list-ul"></i>
-                        <span>قائمة مفصلة</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <section class="strategic-guide-card vmv-card mb-4">
+        <section class="strategic-guide-card vmv-card mb-3">
             <div class="strategic-guide-header" onclick="toggleVmvSection()">
                 <div class="d-flex align-items-center gap-2">
                     <i class="fas fa-shield-halved fa-lg text-danger"></i>
@@ -1277,7 +1811,7 @@
             </div>
         </section>
 
-        <section class="strategic-guide-card">
+        <section class="strategic-guide-card mb-4">
             <div class="strategic-guide-header" onclick="toggleStrategicGuide()">
                 <div class="d-flex align-items-center gap-2">
                     <i class="fas fa-compass fa-lg text-danger"></i>
@@ -1356,15 +1890,205 @@
             </div>
         </section>
 
-        <nav class="month-quicknav-bar mb-4" aria-label="الانتقال السريع للأشهر">
-            <div class="month-quicknav-title">
-                <i class="fas fa-calendar-week text-warning"></i>
-                <span>انتقال سريع للأشهر:</span>
+        <!-- لوحة الإحصائيات التفاعلية السريعة -->
+        <section class="scout-dashboard-stats" id="dashboardStats" aria-label="إحصاءات تفاعلية">
+            <div class="scout-stat-card" data-metric="all" onclick="handleStatCardClick('all')" title="عرض كل أنشطة السنة">
+                <div class="stat-top-row">
+                    <span class="stat-icon-wrap stat-icon-all">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                </div>
+                <div class="stat-text-group">
+                    <strong class="stat-number-val" id="dashTotal">--</strong>
+                    <span class="stat-label-text">أنشطة السنة</span>
+                </div>
             </div>
-            <div class="month-quicknav-scroll" id="monthQuicknav"></div>
-        </nav>
 
-        <div id="monthsContainer" class="months-grid grid-view"></div>
+            <div class="scout-stat-card active" data-metric="month" onclick="handleStatCardClick('month')" title="عرض أنشطة الشهر المحدد">
+                <div class="stat-top-row">
+                    <span class="stat-icon-wrap stat-icon-month">
+                        <i class="fas fa-calendar-day"></i>
+                    </span>
+                </div>
+                <div class="stat-text-group">
+                    <strong class="stat-number-val" id="dashMonth">--</strong>
+                    <span class="stat-label-text">أنشطة الشهر</span>
+                </div>
+            </div>
+
+            <div class="scout-stat-card" data-metric="specific" onclick="handleStatCardClick('specific')" title="تصفية الأنشطة المحددة بتاريخ ويوم معين">
+                <div class="stat-top-row">
+                    <span class="stat-icon-wrap stat-icon-specific">
+                        <i class="far fa-calendar-check"></i>
+                    </span>
+                </div>
+                <div class="stat-text-group">
+                    <strong class="stat-number-val" id="dashSpecific">0</strong>
+                    <span class="stat-label-text">بيوم محدد</span>
+                </div>
+            </div>
+
+            <div class="scout-stat-card" data-metric="monthwide" onclick="handleStatCardClick('monthwide')" title="تصفية الأنشطة الممتدة طوال الشهر">
+                <div class="stat-top-row">
+                    <span class="stat-icon-wrap stat-icon-monthwide">
+                        <i class="far fa-clock"></i>
+                    </span>
+                </div>
+                <div class="stat-text-group">
+                    <strong class="stat-number-val" id="dashMonthWide">0</strong>
+                    <span class="stat-label-text">أنشطة ممتدة</span>
+                </div>
+            </div>
+
+            <div class="scout-stat-card" data-metric="online" onclick="handleStatCardClick('online')" title="تصفية اللقاءات والورشات الإلكترونية عبر الإنترنت">
+                <div class="stat-top-row">
+                    <span class="stat-icon-wrap stat-icon-online">
+                        <i class="fas fa-laptop"></i>
+                    </span>
+                </div>
+                <div class="stat-text-group">
+                    <strong class="stat-number-val" id="dashOnline">0</strong>
+                    <span class="stat-label-text">لقاءات عن بُعد</span>
+                </div>
+            </div>
+
+            <div class="scout-stat-card" data-metric="goals" onclick="handleStatCardClick('goals')" title="استعراض الأهداف الاستراتيجية المبرمجة">
+                <div class="stat-top-row">
+                    <span class="stat-icon-wrap stat-icon-goals">
+                        <i class="fas fa-bullseye"></i>
+                    </span>
+                </div>
+                <div class="stat-text-group">
+                    <strong class="stat-number-val" id="dashGoals">10/10</strong>
+                    <span class="stat-label-text">أهداف مبرمجة</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- رسم بياني لتوزيع الأنشطة على مدار السنة (إحصائيات الأشهر) -->
+        <section class="monthly-overview-card" id="monthlyOverviewCard" aria-label="توزيع الأنشطة على أشهر السنة">
+            <div class="overview-header-row">
+                <div class="overview-title-box">
+                    <div class="overview-icon-badge">
+                        <i class="fas fa-chart-simple"></i>
+                    </div>
+                    <div class="overview-title-text">
+                        <h4>الأنشطة على مدار السنة</h4>
+                        <small>اختر أو انقر على أي شهر للاستعراض المباشر في التقويم وتحديث الإحصائيات</small>
+                    </div>
+                </div>
+                <div class="overview-badges-group">
+                    <span id="overviewTotalBadge" class="overview-rate-badge" style="background: var(--scout-maroon-subtle); color: var(--scout-maroon); border-color: rgba(130, 21, 29, 0.2);">
+                        <i class="fas fa-clipboard-list"></i> <span id="chartTotalEventsDisplay">-- نشاط مبرمج</span>
+                    </span>
+                    <span class="overview-year-badge">
+                        السنة: <strong id="chartYearDisplay">2027</strong>
+                    </span>
+                </div>
+            </div>
+
+            <!-- أشرطة الأشهر الـ 12 التفاعلية -->
+            <div id="monthlyBars" class="monthly-bars-container"></div>
+            <div class="month-swipe-hint">
+                <i class="fas fa-arrows-left-right me-1"></i> اسحب أفقياً لاستعراض كافة الأشهر الـ 12
+            </div>
+        </section>
+
+        <!-- شريط التحكم الموحد: الفلاتر + التحكم بالأشهر + نمط العرض -->
+        <div class="toolbar-actions merged-toolbar">
+
+            <!-- صف الفلاتر: السنة الكشفية + الهدف الاستراتيجي + البحث -->
+            <div class="toolbar-filters-row">
+                <div class="toolbar-filter-item">
+                    <span class="toolbar-label">
+                        <i class="fas fa-calendar-alt text-danger"></i>
+                        <span>اختر السنة الكشفية:</span>
+                    </span>
+                    <div class="year-selector-group">
+                        <button type="button" class="year-btn active" id="btnYear2027" onclick="filterYear('2027')">
+                            <i class="fas fa-check-circle"></i> 2027
+                        </button>
+                        <button type="button" class="year-btn" id="btnYear2028" onclick="filterYear('2028')">
+                            <i class="far fa-circle"></i> 2028
+                        </button>
+                    </div>
+                </div>
+
+                <div class="toolbar-filter-item toolbar-filter-goal">
+                    <span class="toolbar-label">
+                        <i class="fas fa-bullseye text-warning"></i>
+                        <span>الهدف الاستراتيجي المرجعي:</span>
+                    </span>
+                    <select id="goalFilter" class="form-select form-select-md border-secondary-subtle fw-semibold"
+                        onchange="applyFilters()">
+                        <option value="ALL">جميع الأهداف الاستراتيجية (10 أهداف)</option>
+                        <option value="1">1. تأسيس أكاديمية التدريب (كشفية - موسيقية)</option>
+                        <option value="2">2. منصة تقنية إلكترونية للتحول الرقمي</option>
+                        <option value="3">3. تبادل الخبرات ولقاءات الشباب</option>
+                        <option value="4">4. تطوير دستور الجمعية</option>
+                        <option value="5">5. العالم المستدام والحماية من الأذى</option>
+                        <option value="6">6. الاندماج المجتمعي وقبول الآخر</option>
+                        <option value="7">7. منظومة إعلامية عالية الجودة</option>
+                        <option value="8">8. الشراكات الاستراتيجية والتمويل</option>
+                        <option value="9">9. تأسيس شبكة أصدقاء الكشاف السرياني</option>
+                        <option value="10">10. تقدير التطوع وتكريم القادة</option>
+                    </select>
+                </div>
+
+                <div class="toolbar-filter-item toolbar-filter-search">
+                    <span class="toolbar-label">
+                        <i class="fas fa-search text-primary"></i>
+                        <span>بحث سريع:</span>
+                    </span>
+                    <input type="text" id="searchInput" class="form-control border-secondary-subtle"
+                        placeholder="ابحث باسم النشاط..." oninput="applyFilters()">
+                </div>
+            </div>
+
+            <!-- صف التحكم بالأشهر ونمط العرض -->
+            <div class="toolbar-controls-row">
+                <div class="toolbar-group month-controls-group" id="monthControlsGroup" style="display: none;">
+                    <span class="toolbar-label">
+                        <i class="fas fa-sliders-h text-danger"></i>
+                        <span>التحكم بالأشهر:</span>
+                    </span>
+                    <button type="button" class="btn-scout-action" id="btnToggleAllMonths"
+                        onclick="toggleAllMonths()" title="فتح كافة بطاقات الأشهر">
+                        <i class="fas fa-angle-double-down"></i>
+                        <span>فتح جميع الأشهر</span>
+                    </button>
+                </div>
+
+                <div class="toolbar-group view-controls-group ms-auto">
+                    <span class="toolbar-label">
+                        <i class="fas fa-th-large text-warning"></i>
+                        <span>نمط العرض:</span>
+                    </span>
+                    <div class="view-btn-pair">
+                        <button type="button" class="btn-scout-action active-view" id="btnCalendarView"
+                            onclick="setViewMode('calendar')" title="طريقة العرض كتقويم شهري مربّع">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>تقويم شهري</span>
+                        </button>
+                        <button type="button" class="btn-scout-action" id="btnGridView"
+                            onclick="setViewMode('grid')" title="عرض شبكي متناسق">
+                            <i class="fas fa-th"></i>
+                            <span>شبكة بطاقات</span>
+                        </button>
+                        <button type="button" class="btn-scout-action" id="btnListView" onclick="setViewMode('list')"
+                            title="عرض كقائمة متسلسلة">
+                            <i class="fas fa-list-ul"></i>
+                            <span>قائمة مفصلة</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="calendarViewContainer" class="scout-calendar-section"></div>
+
+        <div id="monthsContainer" class="months-grid grid-view" style="display: none;"></div>
     </main>
 
     <footer class="scout-footer">
@@ -1380,8 +2104,60 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="modal fade" id="calendarDayModal" tabindex="-1" aria-labelledby="calendarDayModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header py-3" style="background: linear-gradient(135deg, var(--scout-maroon-deep), var(--scout-maroon)); color: #ffffff;">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-calendar-day text-warning fa-lg"></i>
+                        <h5 class="modal-title fw-bold" id="calendarDayModalLabel">برنامج اليوم</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" onclick="hideModalById('calendarDayModal')" aria-label="إغلاق"></button>
+                </div>
+                <div class="modal-body p-3 p-md-4" id="calendarDayModalBody">
+                    <!-- سيتم حقن قائمة أنشطة اليوم هنا -->
+                </div>
+                <div class="modal-footer bg-light py-2">
+                    <button type="button" class="btn btn-secondary btn-sm px-3" data-bs-dismiss="modal" onclick="hideModalById('calendarDayModal')">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تفاصيل النشاط -->
+    <div class="modal fade" id="calendarEventModal" tabindex="-1" aria-labelledby="calendarEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header py-3" style="background: linear-gradient(135deg, var(--scout-maroon-deep), var(--scout-maroon)); color: #ffffff;">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-info-circle text-warning fa-lg"></i>
+                        <h5 class="modal-title fw-bold" id="calendarEventModalLabel">تفاصيل النشاط</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" onclick="hideModalById('calendarEventModal')" aria-label="إغلاق"></button>
+                </div>
+                <div class="modal-body p-3 p-md-4">
+                    <div class="mb-3">
+                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle mb-2 px-3 py-1 fw-bold" id="eventModalCategory">نشاط مبرمج</span>
+                        <h4 class="fw-bold text-dark mb-2" id="eventModalTitle">--</h4>
+                        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-2">
+                            <span id="eventModalDate"><i class="far fa-calendar-alt text-danger me-1"></i> <strong>--</strong></span>
+                            <span id="eventModalPlace"><i class="fas fa-map-marker-alt text-warning me-1"></i> <strong>--</strong></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="fw-bold small text-muted mb-2"><i class="fas fa-bullseye text-warning me-1"></i> الأهداف الاستراتيجية المرتبطة:</label>
+                        <div class="d-flex flex-wrap gap-2" id="eventModalGoals"></div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light py-2">
+                    <button type="button" class="btn btn-secondary btn-sm px-3" data-bs-dismiss="modal" onclick="hideModalById('calendarEventModal')">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         const MONTHS_ORDER = [
@@ -1685,16 +2461,68 @@
         ];
 
         let currentYear = '2027';
-        let currentView = 'grid'; // 'grid' أو 'list'
+        let currentView = 'calendar'; // 'calendar', 'grid', 'list'
+        let currentSelectedMonth = 0; // 0 = كانون الثاني, 11 = كانون الأول
+        let quickFilter = ''; // '', 'specific', 'monthwide', 'online'
         let monthExpandedState = {};
+        let currentSelectedEvent = null;
+        let processedEvents = [];
+
+        // دالة تنظيف النصوص وحمايتها من ثغرات الحقن
+        function esc(s) {
+            if (s === null || s === undefined) return '';
+            return String(s).replace(/[&<>"']/g, c => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[c]));
+        }
+
+        // معالجة الأنشطة لدمج الأيام المتصلة بنفس العنوان وتحديد البداية والنهاية
+        function preprocessEvents() {
+            processedEvents = [];
+            allEvents.forEach((e, i) => {
+                const m = MONTHS_ORDER.findIndex(m => m.key === e.month);
+                const day = Number(e.day) || 0;
+
+                const prev = processedEvents.findLast(p =>
+                    p.year === e.year &&
+                    p.m === m &&
+                    p.title === e.title &&
+                    JSON.stringify(p.goals) === JSON.stringify(e.goals) &&
+                    p.end === day - 1 &&
+                    day > 1
+                );
+
+                if (prev) {
+                    prev.end = day;
+                    prev.sourceIndices.push(i);
+                } else {
+                    processedEvents.push({
+                        ...e,
+                        id: 'evt_' + i,
+                        sourceIndex: i,
+                        sourceIndices: [i],
+                        m: m,
+                        start: day,
+                        end: day
+                    });
+                }
+            });
+        }
 
         function initApp() {
+            preprocessEvents();
             MONTHS_ORDER.forEach(m => {
                 monthExpandedState[m.key] = true;
             });
             const footerYear = document.getElementById('currentFooterYear');
             if (footerYear) footerYear.textContent = new Date().getFullYear();
-            applyFilters();
+
+            // تطبيق نمط العرض الافتراضي (التقويم الشهري)
+            setViewMode('calendar');
         }
 
         if (document.readyState === 'loading') {
@@ -1705,7 +2533,10 @@
 
         function filterYear(year) {
             currentYear = year;
-            document.getElementById('activeYearText').textContent = year;
+            const activeYearText = document.getElementById('activeYearText');
+            if (activeYearText) activeYearText.textContent = year;
+            const chartYear = document.getElementById('chartYearDisplay');
+            if (chartYear) chartYear.textContent = year;
 
             const btn2027 = document.getElementById('btnYear2027');
             const btn2028 = document.getElementById('btnYear2028');
@@ -1733,7 +2564,8 @@
         function filterByGoal(goalId) {
             document.getElementById('goalFilter').value = goalId;
             applyFilters();
-            document.getElementById('monthsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const target = currentView === 'calendar' ? document.getElementById('calendarViewContainer') : document.getElementById('monthsContainer');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function toggleVmvSection() {
@@ -1762,20 +2594,50 @@
 
         function setViewMode(mode) {
             currentView = mode;
-            const container = document.getElementById('monthsContainer');
+            const calContainer = document.getElementById('calendarViewContainer');
+            const monthsContainer = document.getElementById('monthsContainer');
+            const monthControlsGroup = document.getElementById('monthControlsGroup');
+
+            const btnCal = document.getElementById('btnCalendarView');
             const btnGrid = document.getElementById('btnGridView');
             const btnList = document.getElementById('btnListView');
 
-            if (mode === 'grid') {
-                container.classList.remove('list-view');
-                container.classList.add('grid-view');
-                btnGrid.classList.add('active-view');
-                btnList.classList.remove('active-view');
+            if (btnCal) btnCal.classList.toggle('active-view', mode === 'calendar');
+            if (btnGrid) btnGrid.classList.toggle('active-view', mode === 'grid');
+            if (btnList) btnList.classList.toggle('active-view', mode === 'list');
+
+            if (mode === 'calendar') {
+                if (calContainer) calContainer.style.display = 'block';
+                if (monthsContainer) monthsContainer.style.display = 'none';
+                if (monthControlsGroup) monthControlsGroup.style.display = 'none';
             } else {
-                container.classList.remove('grid-view');
-                container.classList.add('list-view');
-                btnList.classList.add('active-view');
-                btnGrid.classList.remove('active-view');
+                if (calContainer) calContainer.style.display = 'none';
+                if (monthsContainer) {
+                    monthsContainer.style.display = 'grid';
+                    monthsContainer.className = mode === 'grid' ? 'months-grid grid-view' : 'months-grid list-view';
+                }
+                if (monthControlsGroup) monthControlsGroup.style.display = 'flex';
+            }
+
+            applyFilters();
+        }
+
+        function toggleAllMonths() {
+            const allExpanded = MONTHS_ORDER.every(m => monthExpandedState[m.key]);
+            if (allExpanded) collapseAllMonths();
+            else expandAllMonths();
+        }
+
+        function updateToggleAllBtn() {
+            const btn = document.getElementById('btnToggleAllMonths');
+            if (!btn) return;
+            const allExpanded = MONTHS_ORDER.every(m => monthExpandedState[m.key]);
+            if (allExpanded) {
+                btn.innerHTML = '<i class="fas fa-angle-double-up"></i><span>طي جميع الأشهر</span>';
+                btn.title = 'طي كافة بطاقات الأشهر';
+            } else {
+                btn.innerHTML = '<i class="fas fa-angle-double-down"></i><span>فتح جميع الأشهر</span>';
+                btn.title = 'فتح كافة بطاقات الأشهر';
             }
         }
 
@@ -1788,6 +2650,7 @@
                 const content = card.querySelector('.month-content');
                 if (content) content.style.display = 'block';
             });
+            updateToggleAllBtn();
         }
 
         function collapseAllMonths() {
@@ -1799,6 +2662,7 @@
                 const content = card.querySelector('.month-content');
                 if (content) content.style.display = 'none';
             });
+            updateToggleAllBtn();
         }
 
         function toggleMonthCard(monthKey) {
@@ -1817,24 +2681,476 @@
                 if (content) content.style.display = 'block';
                 monthExpandedState[monthKey] = true;
             }
+            updateToggleAllBtn();
         }
 
         function applyFilters() {
             const selectedGoal = document.getElementById('goalFilter').value;
             const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
-            const container = document.getElementById('monthsContainer');
 
-            const filteredEvents = allEvents.filter(ev => {
-                const matchYear = ev.year === currentYear;
+            const annualEvents = processedEvents.filter(ev => ev.year === currentYear);
+
+            const filteredEvents = annualEvents.filter(ev => {
                 const matchGoal = (selectedGoal === 'ALL') || ev.goals.includes(selectedGoal);
                 const matchSearch = !searchText ||
                     ev.title.toLowerCase().includes(searchText) ||
                     ev.month.toLowerCase().includes(searchText) ||
-                    (ev.day && ev.day.toLowerCase().includes(searchText));
-                return matchYear && matchGoal && matchSearch;
+                    (ev.day && String(ev.day).toLowerCase().includes(searchText));
+
+                let matchQuick = true;
+                if (quickFilter === 'specific') matchQuick = Boolean(ev.day);
+                else if (quickFilter === 'monthwide') matchQuick = !ev.day;
+                else if (quickFilter === 'online') matchQuick = /أونلاين|اونلاين|إلكتروني|منصة/.test(ev.title);
+
+                return matchGoal && matchSearch && matchQuick;
             });
 
-            document.getElementById('totalCountNumber').textContent = filteredEvents.length;
+            const totalCountPill = document.getElementById('totalCountNumber');
+            if (totalCountPill) totalCountPill.textContent = filteredEvents.length;
+
+            updateDashboardStats(annualEvents, filteredEvents);
+
+            renderMonthlyBars(annualEvents, filteredEvents);
+
+            if (currentView === 'calendar') {
+                renderCalendarView(filteredEvents);
+            } else {
+                renderMonthsGridList(filteredEvents);
+            }
+        }
+
+        // تحديث إحصائيات لوحة المؤشرات
+        function updateDashboardStats(annualEvents, filteredEvents) {
+            const monthCount = annualEvents.filter(e => e.m === currentSelectedMonth).length;
+            const specificCount = annualEvents.filter(e => Boolean(e.day)).length;
+            const monthWideCount = annualEvents.filter(e => !e.day).length;
+            const onlineCount = annualEvents.filter(e => /أونلاين|اونلاين|إلكتروني|منصة/.test(e.title)).length;
+            const programmedGoalsCount = new Set(annualEvents.flatMap(e => e.goals)).size;
+
+            const dashTotal = document.getElementById('dashTotal');
+            const dashMonth = document.getElementById('dashMonth');
+            const dashSpecific = document.getElementById('dashSpecific');
+            const dashMonthWide = document.getElementById('dashMonthWide');
+            const dashOnline = document.getElementById('dashOnline');
+            const dashGoals = document.getElementById('dashGoals');
+            const chartTotalDisplay = document.getElementById('chartTotalEventsDisplay');
+
+            if (dashTotal) dashTotal.textContent = annualEvents.length;
+            if (dashMonth) dashMonth.textContent = monthCount;
+            if (dashSpecific) dashSpecific.textContent = specificCount;
+            if (dashMonthWide) dashMonthWide.textContent = monthWideCount;
+            if (dashOnline) dashOnline.textContent = onlineCount;
+            if (dashGoals) dashGoals.textContent = `${programmedGoalsCount}/10`;
+            if (chartTotalDisplay) chartTotalDisplay.textContent = `${annualEvents.length} نشاط مبرمج`;
+
+            document.querySelectorAll('.scout-stat-card').forEach(card => {
+                const metric = card.dataset.metric;
+                const isActive = (metric === 'all' && quickFilter === '' && currentView !== 'calendar') ||
+                    (metric === 'month' && quickFilter === '' && currentView === 'calendar') ||
+                    (metric === quickFilter);
+                card.classList.toggle('active', isActive);
+            });
+        }
+
+        function handleStatCardClick(metric) {
+            if (metric === 'goals') {
+                const guideBody = document.getElementById('strategicGuideBody');
+                const chevron = document.getElementById('guideChevron');
+                if (guideBody) {
+                    guideBody.style.display = 'block';
+                    if (chevron) chevron.className = 'fas fa-chevron-up text-muted';
+                    guideBody.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            if (metric === 'all') {
+                quickFilter = '';
+                if (currentView === 'calendar') setViewMode('grid');
+                else applyFilters();
+                return;
+            }
+
+            if (metric === 'month') {
+                quickFilter = '';
+                if (currentView !== 'calendar') setViewMode('calendar');
+                else applyFilters();
+                return;
+            }
+
+            quickFilter = (quickFilter === metric) ? '' : metric;
+            applyFilters();
+        }
+
+        function renderMonthlyBars(annualEvents, filteredEvents) {
+            const container = document.getElementById('monthlyBars');
+            if (!container) return;
+
+            const counts = MONTHS_ORDER.map((m, i) => filteredEvents.filter(e => e.m === i).length);
+            const max = Math.max(1, ...counts);
+
+            let html = '';
+            MONTHS_ORDER.forEach((m, i) => {
+                const count = counts[i];
+                const heightPercent = count ? Math.max(8, Math.round((count / max) * 100)) : 0;
+                const isSelected = (i === currentSelectedMonth);
+                const shortName = m.name.split(' (')[0];
+
+                html += `
+                    <button type="button" class="month-bar-btn ${isSelected ? 'selected' : ''}" 
+                        onclick="selectMonthBar(${i})" 
+                        title="${m.name}: ${count} نشاط" 
+                        aria-label="${m.name}: ${count} نشاط"
+                        aria-pressed="${isSelected}">
+                        <span class="month-bar-count">${count}</span>
+                        <span class="month-bar-track">
+                            <i class="month-bar-fill" style="height: ${heightPercent}%;"></i>
+                        </span>
+                        <span class="month-bar-label">${shortName}</span>
+                    </button>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function selectMonthBar(monthIndex) {
+            currentSelectedMonth = monthIndex;
+            if (currentView === 'calendar') {
+                applyFilters();
+                const cal = document.getElementById('calendarViewContainer');
+                if (cal) cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                applyFilters();
+                scrollToMonth(MONTHS_ORDER[monthIndex].key);
+            }
+        }
+
+        function renderCalendarView(filteredEvents) {
+            const container = document.getElementById('calendarViewContainer');
+            if (!container) return;
+
+            const currentMonthObj = MONTHS_ORDER[currentSelectedMonth];
+            const monthEvents = filteredEvents.filter(e => e.m === currentSelectedMonth);
+            const totalInMonth = monthEvents.length;
+            const multiDayCount = monthEvents.filter(e => e.end > e.start).length;
+
+            const firstDayOfWeek = new Date(+currentYear, currentSelectedMonth, 1).getDay(); // 0: Sun, 5: Fri, 6: Sat
+            const totalDaysInMonth = new Date(+currentYear, currentSelectedMonth + 1, 0).getDate();
+
+            const weekdayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+
+            let daysGridHtml = weekdayNames.map((d, i) => {
+                const isWeekend = (i === 5 || i === 6);
+                return `<div class="scout-calendar-dow ${isWeekend ? 'weekend' : ''}">${d}</div>`;
+            }).join('');
+
+            for (let i = 0; i < firstDayOfWeek; i++) {
+                daysGridHtml += `<div class="scout-calendar-cell blank" aria-hidden="true"></div>`;
+            }
+
+            for (let d = 1; d <= totalDaysInMonth; d++) {
+                const dayEvents = monthEvents.filter(e => e.start && e.start <= d && e.end >= d);
+                const dow = new Date(+currentYear, currentSelectedMonth, d).getDay();
+                const isWeekend = (dow === 5 || dow === 6);
+
+                let eventsChipsHtml = dayEvents.slice(0, 2).map(ev => {
+                    const primaryGoal = ev.goals[0] || '1';
+                    return `
+                        <button type="button" class="cal-event-chip cal-goal-${primaryGoal}" 
+                            onclick="openCalendarEvent('${ev.id}')" 
+                            title="${esc(ev.title)}">
+                            <span>${esc(ev.title)}</span>
+                        </button>
+                    `;
+                }).join('');
+
+                let moreBtnHtml = '';
+                if (dayEvents.length > 2) {
+                    moreBtnHtml = `
+                        <button type="button" class="cell-more-btn" onclick="openCalendarDay(${d})">
+                            +${dayEvents.length - 2} المزيد
+                        </button>
+                    `;
+                }
+
+                daysGridHtml += `
+                    <div class="scout-calendar-cell ${isWeekend ? 'weekend' : ''}">
+                        <div class="cell-day-header">
+                            <span class="cell-day-num">${d}</span>
+                            ${dayEvents.length ? `<span class="cell-day-count-badge">${dayEvents.length} نشاط</span>` : ''}
+                        </div>
+                        <div class="cell-events-list">
+                            ${eventsChipsHtml}
+                            ${moreBtnHtml}
+                        </div>
+                    </div>
+                `;
+            }
+
+            const trailingBlanks = (7 - (firstDayOfWeek + totalDaysInMonth) % 7) % 7;
+            for (let i = 0; i < trailingBlanks; i++) {
+                daysGridHtml += `<div class="scout-calendar-cell blank" aria-hidden="true"></div>`;
+            }
+
+            const monthLongEvents = monthEvents.filter(e => !e.start);
+            let monthLongHtml = '';
+            if (monthLongEvents.length > 0) {
+                monthLongHtml = `
+                    <div class="mt-3">
+                        <h6 class="fw-bold text-muted small mb-2"><i class="fas fa-calendar-week text-warning me-1"></i> أنشطة ممتدة على مدار هذا الشهر:</h6>
+                        ${monthLongEvents.map(ev => `
+                            <div class="month-long-event-card" onclick="openCalendarEvent('${ev.id}')">
+                                <span class="month-long-badge"><i class="far fa-calendar-alt me-1"></i> طيلة الشهر</span>
+                                <span class="month-long-title">${esc(ev.title)}</span>
+                                <span class="month-long-action">عرض ومتابعة ←</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            const uniqueGoalsInMonth = [...new Set(monthEvents.flatMap(e => e.goals))];
+            let legendHtml = `
+                <div class="calendar-goals-legend">
+                    <span class="legend-title"><i class="fas fa-palette me-1"></i> دليل ألوان الأهداف:</span>
+                    ${uniqueGoalsInMonth.map(g => {
+                        const goalInfo = GOALS_MAP[g] || { title: `هدف ${g}` };
+                        return `
+                            <span class="legend-item">
+                                <i class="legend-dot g-color-${g}"></i>
+                                <span>هدف ${g}: ${esc(goalInfo.title)}</span>
+                            </span>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+
+            let monthOptionsHtml = MONTHS_ORDER.map((m, i) => `
+                <option value="${i}" ${i === currentSelectedMonth ? 'selected' : ''}>${m.name}</option>
+            `).join('');
+
+            container.innerHTML = `
+                <!-- شريط التنقل العلوي للتقويم -->
+                <div class="calendar-nav-toolbar">
+                    <div class="d-flex align-items-center gap-2">
+                        <button type="button" class="calendar-nav-btn" onclick="prevCalendarMonth()" ${currentSelectedMonth === 0 ? 'disabled' : ''} aria-label="الشهر السابق">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>الشهر السابق</span>
+                        </button>
+                        <button type="button" class="calendar-nav-btn" onclick="nextCalendarMonth()" ${currentSelectedMonth === 11 ? 'disabled' : ''} aria-label="الشهر التالي">
+                            <span>الشهر التالي</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+
+                    <div class="calendar-month-header-info">
+                        <h3 class="calendar-current-month-title">${currentMonthObj.name} ${currentYear}</h3>
+                        <span class="calendar-month-badge">
+                            <i class="fas fa-calendar-check me-1"></i> ${totalInMonth} نشاط ${multiDayCount ? `• ${multiDayCount} متعددة الأيام` : ''}
+                        </span>
+                    </div>
+
+                    <div>
+                        <select class="calendar-month-select" onchange="selectCalendarMonth(this.value)" aria-label="اختر الشهر">
+                            ${monthOptionsHtml}
+                        </select>
+                    </div>
+                </div>
+
+                <!-- شبكة التقويم الشهرية الكاملة 7x5/6 -->
+                <div class="calendar-scroll-wrap">
+                    <div class="scout-calendar-grid">
+                        ${daysGridHtml}
+                    </div>
+                </div>
+
+                <!-- فعاليات طيلة الشهر -->
+                ${monthLongHtml}
+
+                <!-- دليل الألوان -->
+                ${legendHtml}
+            `;
+        }
+
+        function prevCalendarMonth() {
+            if (currentSelectedMonth > 0) {
+                currentSelectedMonth--;
+                applyFilters();
+            }
+        }
+
+        function nextCalendarMonth() {
+            if (currentSelectedMonth < 11) {
+                currentSelectedMonth++;
+                applyFilters();
+            }
+        }
+
+        function selectCalendarMonth(mIndex) {
+            currentSelectedMonth = Number(mIndex);
+            applyFilters();
+        }
+
+        // فتح نافذة برنامج اليوم
+        function openCalendarDay(day) {
+            const currentMonthObj = MONTHS_ORDER[currentSelectedMonth];
+            const dayEvents = processedEvents.filter(e =>
+                e.year === currentYear &&
+                e.m === currentSelectedMonth &&
+                e.start && e.start <= day && e.end >= day
+            );
+
+            const titleElem = document.getElementById('calendarDayModalLabel');
+            const bodyElem = document.getElementById('calendarDayModalBody');
+
+            if (titleElem) {
+                titleElem.innerHTML = `برنامج أنشطة يوم ${day} ${currentMonthObj.name} ${currentYear}`;
+            }
+
+            if (bodyElem) {
+                bodyElem.innerHTML = `
+                    <div class="d-flex flex-column gap-3">
+                        ${dayEvents.map(ev => {
+                            return `
+                                <div class="p-3 rounded-3 border" style="background: #faf8f5; border-right: 4px solid var(--scout-maroon) !important;">
+                                    <div class="d-flex justify-content-between align-items-start gap-3">
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-bold mb-2 text-dark">${esc(ev.title)}</h5>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                ${ev.goals.map(g => {
+                                                    const goalData = GOALS_MAP[g] || { title: `هدف ${g}`, class: 'gt-1', icon: 'fa-check' };
+                                                    return `
+                                                        <span class="goal-tag ${goalData.class}">
+                                                            <i class="fas ${goalData.icon}"></i>
+                                                            <span>هدف ${g}: ${esc(goalData.title)}</span>
+                                                        </span>
+                                                    `;
+                                                }).join('')}
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-danger btn-sm fw-bold px-3 py-2 text-nowrap" 
+                                            onclick="openCalendarEvent('${ev.id}', true)">
+                                            <i class="fas fa-info-circle me-1"></i> تفاصيل النشاط
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            }
+
+            showModalById('calendarDayModal');
+        }
+
+        function showModalById(modalId) {
+            const el = document.getElementById(modalId);
+            if (!el) return;
+            if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                try {
+                    const modalInstance = bootstrap.Modal.getOrCreateInstance(el);
+                    modalInstance.show();
+                    return;
+                } catch (e) {
+                    console.warn('Bootstrap modal fallback:', e);
+                }
+            }
+            el.classList.add('show');
+            el.style.display = 'block';
+            el.removeAttribute('aria-hidden');
+            el.setAttribute('aria-modal', 'true');
+            let backdrop = document.getElementById('scoutModalBackdrop');
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.id = 'scoutModalBackdrop';
+                backdrop.className = 'modal-backdrop fade show';
+                backdrop.onclick = () => hideModalById(modalId);
+                document.body.appendChild(backdrop);
+            }
+            document.body.classList.add('modal-open');
+        }
+
+        function hideModalById(modalId) {
+            const el = document.getElementById(modalId);
+            if (!el) return;
+            if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                try {
+                    const modalInstance = bootstrap.Modal.getInstance(el);
+                    if (modalInstance) {
+                        modalInstance.hide();
+                    }
+                } catch (e) {}
+            }
+            el.classList.remove('show');
+            el.style.display = 'none';
+            el.setAttribute('aria-hidden', 'true');
+            el.removeAttribute('aria-modal');
+            const backdrop = document.getElementById('scoutModalBackdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+            document.body.classList.remove('modal-open');
+        }
+
+        function openCalendarEvent(eventId, fromDayModal = false) {
+            const ev = processedEvents.find(e => e.id === eventId);
+            if (!ev) return;
+
+            currentSelectedEvent = ev;
+
+            if (fromDayModal) {
+                hideModalById('calendarDayModal');
+            }
+
+            const titleElem = document.getElementById('eventModalTitle');
+            const dateElem = document.getElementById('eventModalDate');
+            const placeElem = document.getElementById('eventModalPlace');
+            const goalsElem = document.getElementById('eventModalGoals');
+
+            if (titleElem) titleElem.textContent = ev.title;
+
+            const isSpecificDay = Boolean(ev.start);
+            const dateStr = isSpecificDay ?
+                (ev.start === ev.end ? `${ev.start} ${ev.month} ${ev.year}` : `من ${ev.start} إلى ${ev.end} ${ev.month} ${ev.year}`) :
+                `طيلة شهر ${ev.month} ${ev.year}`;
+
+            let weekdayText = '';
+            if (isSpecificDay && ev.start === ev.end) {
+                try {
+                    weekdayText = ' (' + new Intl.DateTimeFormat('ar-SY', { weekday: 'long' }).format(new Date(+ev.year, ev.m, ev.start)) + ')';
+                } catch (e) { }
+            }
+
+            if (dateElem) {
+                dateElem.innerHTML = `<i class="far fa-calendar-alt text-danger me-1"></i> <strong>${dateStr}${weekdayText}</strong>`;
+            }
+
+            const isOnline = /أونلاين|اونلاين|إلكتروني|منصة/.test(ev.title);
+            if (placeElem) {
+                placeElem.innerHTML = isOnline ?
+                    `<i class="fas fa-video text-primary me-1"></i> <strong>عبر الإنترنت (لقاء / ورشة إلكترونية)</strong>` :
+                    `<i class="fas fa-map-marker-alt text-warning me-1"></i> <strong>نشاط كشفي ميداني</strong>`;
+            }
+
+            if (goalsElem) {
+                goalsElem.innerHTML = ev.goals.map(g => {
+                    const goalData = GOALS_MAP[g] || { title: `هدف ${g}`, class: 'gt-1', icon: 'fa-check' };
+                    return `
+                        <span class="goal-tag ${goalData.class} px-3 py-2 fs-6">
+                            <i class="fas ${goalData.icon}"></i>
+                            <span>هدف ${g}: ${esc(goalData.title)}</span>
+                        </span>
+                    `;
+                }).join('');
+            }
+
+            showModalById('calendarEventModal');
+        }
+
+        function renderMonthsGridList(filteredEvents) {
+            const container = document.getElementById('monthsContainer');
+            if (!container) return;
 
             if (filteredEvents.length === 0) {
                 container.innerHTML = `
@@ -1863,10 +3179,6 @@
 
             MONTHS_ORDER.forEach(m => {
                 const list = eventsByMonth[m.key] || [];
-                const isFilteredView = (selectedGoal !== 'ALL' || searchText !== '');
-                if (isFilteredView && list.length === 0) {
-                }
-
                 const isExpanded = monthExpandedState[m.key] !== false;
                 const paddedNum = m.id < 10 ? '0' + m.id : m.id;
                 const activityCount = list.length;
@@ -1877,7 +3189,6 @@
 
                 outputHtml += `
                     <article class="month-card ${isExpanded ? 'is-expanded' : ''}" id="month-card-${m.key}">
-                        <!-- ترويسة بطاقة الشهر القابلة للضغط للفتح والطي -->
                         <button type="button" class="month-header-btn" onclick="toggleMonthCard('${m.key}')" aria-expanded="${isExpanded}">
                             <div class="month-info-box">
                                 <div class="month-num-badge" title="شهر رقم ${m.id}">
@@ -1897,14 +3208,13 @@
                             </div>
                         </button>
 
-                        <!-- قائمة فعاليات الشهر المتناسقة بدقة -->
                         <div class="month-content" style="${isExpanded ? 'display: block;' : 'display: none;'}">
                 `;
 
                 if (list.length === 0) {
                     outputHtml += `
                         <div class="py-3 text-center text-muted small">
-                            <i class="far fa-calendar-times me-1"></i> لا توجد أنشطة مجدولة في هذا الشهر
+                            <i class="far fa-calendar-times me-1"></i> لا توجد أنشطة مجدولة في هذا الشهر تطابق الفلتر الحالي
                         </div>
                     `;
                 } else {
@@ -1926,8 +3236,7 @@
                         }).join('');
 
                         outputHtml += `
-                            <div class="scout-event-item">
-                                <!-- بطاقة تاريخ الفعالية المحسنة مع مسافات مريحة وتناسق بصري -->
+                            <div class="scout-event-item" onclick="openCalendarEvent('${ev.id}')" style="cursor: pointer;">
                                 <div class="event-day-box ${isSpecificDay ? '' : 'is-month-wide'}" title="${isSpecificDay ? 'تاريخ النشاط: ' + dayDisplay : 'نشاط ممتد على مدار الشهر'}">
                                     <div class="event-day-icon">
                                         <i class="${isSpecificDay ? 'fas fa-calendar-alt' : 'far fa-clock'}"></i>
@@ -1936,9 +3245,8 @@
                                     <div class="event-day-sub">${subDisplay}</div>
                                 </div>
 
-                                <!-- محتوى وتفاصيل النشاط والوسوم الاستراتيجية -->
                                 <div class="event-body">
-                                    <div class="event-title">${ev.title}</div>
+                                    <div class="event-title mb-2">${esc(ev.title)}</div>
                                     <div class="event-badges-row">
                                         ${badgesHtml}
                                     </div>
@@ -1995,6 +3303,7 @@
         function resetFilters() {
             document.getElementById('goalFilter').value = 'ALL';
             document.getElementById('searchInput').value = '';
+            quickFilter = '';
             applyFilters();
         }
     </script>
